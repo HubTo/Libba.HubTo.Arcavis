@@ -1,1 +1,16 @@
-<Solution />
+<Solution>
+  <Folder Name="/src/" />
+  <Folder Name="/src/Common/">
+    <Project Path="src/Common/Libba.HubTo.Arcavis.Common/Libba.HubTo.Arcavis.Common.csproj" Id="d9d74024-9ac1-42b2-81f2-a2a9a7776a47" />
+  </Folder>
+  <Folder Name="/src/Core/">
+    <Project Path="src/Core/Libba.HubTo.Arcavis.Application/Libba.HubTo.Arcavis.Application.csproj" />
+    <Project Path="src/Core/Libba.HubTo.Arcavis.Domain/Libba.HubTo.Arcavis.Domain.csproj" />
+  </Folder>
+  <Folder Name="/src/Infrastructure/">
+    <Project Path="src/Infrastructure/Libba.HubTo.Arcavis.Infrastructure.Persistence/Libba.HubTo.Arcavis.Infrastructure.Persistence.csproj" />
+  </Folder>
+  <Folder Name="/src/WebApi/">
+    <Project Path="src/WebApi/Libba.HubTo.Arcavis.WebApi/Libba.HubTo.Arcavis.WebApi.csproj" />
+  </Folder>
+</Solution>

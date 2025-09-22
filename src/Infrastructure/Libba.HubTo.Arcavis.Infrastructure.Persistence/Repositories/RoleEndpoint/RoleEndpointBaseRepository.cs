@@ -1,0 +1,11 @@
+﻿using Libba.HubTo.Arcavis.Application.Interfaces.Repositories.RoleEndpoint;
+using Libba.HubTo.Arcavis.Domain.Models;
+using Libba.HubTo.Arcavis.Infrastructure.Persistence.Context;
+
+namespace Libba.HubTo.Arcavis.Infrastructure.Persistence.Repositories.RoleEndpoint;
+
+public partial class RoleEndpointRepository : Repository<RoleEndpointEntity>, IRoleEndpointRepository
+{
+    public RoleEndpointRepository(ArcavisContext context) : base(context)
+    { }
+}
