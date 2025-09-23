@@ -1,6 +1,12 @@
+using Libba.HubTo.Arcavis.Infrastructure.Persistence.Extensions;
+using Libba.HubTo.Arcavis.Application.Extensions;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddEfCoreRegistration(builder.Configuration);
+builder.Services.AddArcavisMapper();
+
 
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi

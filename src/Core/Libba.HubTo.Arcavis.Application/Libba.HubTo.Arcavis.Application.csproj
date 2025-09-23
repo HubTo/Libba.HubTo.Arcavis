@@ -7,7 +7,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+	  <PackageReference Include="AutoMapper" Version="14.0.0" />
+	  <PackageReference Include="MediatR" Version="13.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Libba.HubTo.Arcavis.Domain\Libba.HubTo.Arcavis.Domain.csproj" />
+	  <PackageReference Include="FluentValidation" Version="12.0.0" />
+	  <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Services\Endpoint\Handlers\Commands\" />
+    <Folder Include="Services\Endpoint\Handlers\Queries\" />
+    <Folder Include="Services\Endpoint\Validators\" />
   </ItemGroup>
 
 </Project>

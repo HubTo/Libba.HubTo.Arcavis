@@ -7,6 +7,7 @@ namespace Libba.HubTo.Arcavis.Domain.Models;
 /// </summary>
 public class EndpointEntity : BaseEntity
 {
+    #region Columns
     /// <summary>
     /// The module this endpoint belongs to. (e.g., "Auth", "User")
     /// </summary>
@@ -31,10 +32,12 @@ public class EndpointEntity : BaseEntity
     /// The namespace of the controller this endpoint belongs to.
     /// </summary>
     public string Namespace { get; set; } = string.Empty;
+    #endregion
 
+    #region Relations
     /// <summary>
     /// Navigation property to the roles that have access to this endpoint.
     /// </summary>
     public virtual ICollection<RoleEndpointEntity> RoleEndpoints { get; set; } = new List<RoleEndpointEntity>();
-
+    #endregion
 }

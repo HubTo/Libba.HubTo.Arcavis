@@ -17,7 +17,7 @@ public class TokenEntity : BaseEntity
     public DateTime ValidDate { get; set; }
     #endregion
 
-    #region Foreign Keys
+    #region Relations
     /// <summary>
     /// Users
     /// </summary>

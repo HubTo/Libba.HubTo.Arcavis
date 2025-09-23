@@ -7,6 +7,7 @@ namespace Libba.HubTo.Arcavis.Domain.Models;
 /// </summary>
 public abstract class BaseEntity
 {
+    #region Columns
     /// <summary>
     /// Unique Key Value
     /// </summary>
@@ -32,4 +33,5 @@ public abstract class BaseEntity
     /// When Updated
     /// </summary>
     public DateTime UpdatedAt { get; set; }
+    #endregion
 }

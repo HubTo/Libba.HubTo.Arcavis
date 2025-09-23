@@ -1,6 +1,6 @@
 ﻿using Libba.HubTo.Arcavis.Application.Interfaces.Repositories.Endpoint;
-using Libba.HubTo.Arcavis.Domain.Models;
 using Libba.HubTo.Arcavis.Infrastructure.Persistence.Context;
+using Libba.HubTo.Arcavis.Domain.Models;
 
 namespace Libba.HubTo.Arcavis.Infrastructure.Persistence.Repositories.Endpoint;
 

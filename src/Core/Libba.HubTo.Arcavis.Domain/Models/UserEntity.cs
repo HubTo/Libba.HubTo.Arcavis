@@ -1,6 +1,4 @@
-﻿using System.ComponentModel;
-
-namespace Libba.HubTo.Arcavis.Domain.Models;
+﻿namespace Libba.HubTo.Arcavis.Domain.Models;
 
 /// <summary>
 /// User Authentication Profiles
@@ -22,6 +20,16 @@ public class UserEntity : BaseEntity
     public string Email { get; set; } = null!;
 
     /// <summary>
+    /// Phone Country Code
+    /// </summary>
+    public string PhoneCode { get; set; } = string.Empty;
+
+    /// <summary>
+    /// Phone Number
+    /// </summary>
+    public string PhoneNumber { get; set; } = string.Empty;
+
+    /// <summary>
     /// HAshed Password With Argon2
     /// </summary>
     public string PasswordHash { get; set; } = null!;
@@ -37,7 +45,7 @@ public class UserEntity : BaseEntity
     public bool IsEmailVerified { get; set; }
     #endregion
 
-    #region Foreign Keys
+    #region Relations
     /// <summary>
     /// Token Entity
     /// </summary>
