@@ -17,10 +17,4 @@
 	  <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.0.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Services\Endpoint\Handlers\Commands\" />
-    <Folder Include="Services\Endpoint\Handlers\Queries\" />
-    <Folder Include="Services\Endpoint\Validators\" />
-  </ItemGroup>
-
 </Project>

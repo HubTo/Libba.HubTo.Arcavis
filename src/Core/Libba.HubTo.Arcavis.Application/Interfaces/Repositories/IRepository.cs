@@ -14,41 +14,41 @@ public interface IRepository<T> where T : BaseEntity
     /// </summary>
     /// <param name="id">The unique identifier of the entity.</param>
     /// <returns>The entity if found, otherwise null.</returns>
-    Task<T?> GetByIdAsync(Guid id);
+    Task<T?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Gets all entities of type <typeparamref name="T"/>.
     /// </summary>
     /// <returns>A collection of entities.</returns>
-    Task<IEnumerable<T>> GetAllAsync();
+    Task<IEnumerable<T>> GetAllAsync(CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Gets all entities matching the given predicate.
     /// </summary>
     /// <param name="predicate">The filter condition.</param>
     /// <returns>A collection of entities that satisfy the condition.</returns>
-    Task<IEnumerable<T>> GetWhereAsync(Expression<Func<T, bool>> predicate);
+    Task<IEnumerable<T>> GetWhereAsync(Expression<Func<T, bool>> predicate, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Gets the first entity that matches the given predicate, or null if none found.
     /// </summary>
     /// <param name="predicate">The filter condition.</param>
     /// <returns>The first matching entity or null.</returns>
-    Task<T?> GetFirstOrDefaultAsync(Expression<Func<T, bool>> predicate);
+    Task<T?> GetFirstOrDefaultAsync(Expression<Func<T, bool>> predicate, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Adds a new entity.
     /// </summary>
     /// <param name="entity">The entity to add.</param>
     /// <returns>A task representing the asynchronous operation.</returns>
-    Task AddAsync(T entity);
+    Task AddAsync(T entity, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Adds a range of new entities.
     /// </summary>
     /// <param name="entities">The list of entities to add.</param>
     /// <returns>A task representing the asynchronous operation.</returns>
-    Task AddRangeAsync(IList<T> entities);
+    Task AddRangeAsync(IList<T> entities, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Marks an existing entity as modified. 
@@ -68,6 +68,6 @@ public interface IRepository<T> where T : BaseEntity
     /// Persists all changes made in the repository to the database.
     /// </summary>
     /// <returns>A task representing the asynchronous operation.</returns>
-    Task SaveAsync();
+    Task SaveAsync(CancellationToken cancellationToken = default);
 }
 
