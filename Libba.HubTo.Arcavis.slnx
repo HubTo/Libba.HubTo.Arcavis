@@ -17,4 +17,8 @@
   <Folder Name="/src/WebApi/">
     <Project Path="src/WebApi/Libba.HubTo.Arcavis.WebApi/Libba.HubTo.Arcavis.WebApi.csproj" />
   </Folder>
+  <Folder Name="/tests/" />
+  <Folder Name="/tests/Application/">
+    <Project Path="tests/Application/Libba.HubTo.Arcavis.Application.UnitTests/Libba.HubTo.Arcavis.Application.UnitTests.csproj" Id="f656f509-5f55-4fe5-a771-99d04144aa8a" />
+  </Folder>
 </Solution>

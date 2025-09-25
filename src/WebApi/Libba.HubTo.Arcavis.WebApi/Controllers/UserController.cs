@@ -1,8 +1,10 @@
-﻿using Libba.HubTo.Arcavis.Application.Services.User.Queries;
+﻿using Libba.HubTo.Arcavis.Application.Features.User.GetUserById;
+using Libba.HubTo.Arcavis.Application.Features.User.CreateUser;
+using Libba.HubTo.Arcavis.Application.Features.User.DeleteUser;
+using Libba.HubTo.Arcavis.Application.Features.User.GetAllUser;
+using Libba.HubTo.Arcavis.Application.Features.User.UpdateUser;
 using Libba.HubTo.Arcavis.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using Libba.HubTo.Arcavis.Application.Features.User.CreateUser;
-using Libba.HubTo.Arcavis.Application.Features.User.UpdateUser;
 
 namespace Libba.HubTo.Arcavis.WebApi.Controllers;
 

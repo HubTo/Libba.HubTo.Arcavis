@@ -1,8 +1,10 @@
-﻿using Libba.HubTo.Arcavis.Application.Services.Endpoint.Dtos;
-using Libba.HubTo.Arcavis.Domain.Entities;
-using AutoMapper;
+﻿using Libba.HubTo.Arcavis.Application.Features.Endpoint.GetAllEndpoints;
+using Libba.HubTo.Arcavis.Application.Features.Endpoint.GetEndpointById;
 using Libba.HubTo.Arcavis.Application.Features.Endpoint.CreateEndpoint;
 using Libba.HubTo.Arcavis.Application.Features.Endpoint.UpdateEndpoint;
+using Libba.HubTo.Arcavis.Domain.Entities;
+using AutoMapper;
+
 
 namespace Libba.HubTo.Arcavis.Application.Mapping;
 
@@ -16,7 +18,8 @@ public class EndpointMapping : Profile
         #endregion
 
         #region Data to Business
-        CreateMap<EndpointEntity, EndpointDto>();
+        CreateMap<EndpointEntity, EndpointListItemDto>();
+        CreateMap<EndpointEntity, EndpointDetailDto>();
         #endregion
     }
 }
