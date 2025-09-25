@@ -7,7 +7,5 @@ public record CreateUserCommand
     string Email,
     string PhoneCode,
     string PhoneNumber,
-    string Password,
-    bool IsAccountActive,
-    bool IsEmailVerified
+    string Password
 ) : ICommand<Guid>;

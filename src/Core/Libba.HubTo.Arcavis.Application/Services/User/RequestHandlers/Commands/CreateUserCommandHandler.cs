@@ -4,6 +4,7 @@ using Libba.HubTo.Arcavis.Application.Interfaces;
 using Libba.HubTo.Arcavis.Application.CQRS;
 using Libba.HubTo.Arcavis.Domain.Models;
 using Microsoft.Extensions.Logging;
+using Libba.HubTo.Arcavis.Common.Helpers.Argon2;
 
 namespace Libba.HubTo.Arcavis.Application.Services.User.RequestHandlers.Commands;
 
@@ -35,6 +36,10 @@ public class CreateUserCommandHandler : ICommandHandler<CreateUserCommand, Guid>
         try
         {
             var dal = _mapper.Map<UserEntity>(request);
+
+            dal.IsAccountActive = true;
+            dal.IsEmailVerified = false;
+            dal.PasswordHash = Argon2Helper.HashPassword(request.Password);
 
             await _userRepository.AddAsync(dal, cancellationToken);
             await _userRepository.SaveAsync(cancellationToken);

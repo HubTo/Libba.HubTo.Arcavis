@@ -18,6 +18,7 @@ public static class Registration
         services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(assm));
         services.AddScoped<IArcavisMapper, ArcavisMapper>();
         services.AddScoped<IRequestContext, RequestContext>();
+        services.AddScoped<IArcavisCQRS, ArcavisCQRS>();
 
         return services;
     }

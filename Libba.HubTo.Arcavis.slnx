@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="DbScripts/Scripts.txt" />
+  </Folder>
   <Folder Name="/src/" />
   <Folder Name="/src/Common/">
     <Project Path="src/Common/Libba.HubTo.Arcavis.Common/Libba.HubTo.Arcavis.Common.csproj" Id="d9d74024-9ac1-42b2-81f2-a2a9a7776a47" />
