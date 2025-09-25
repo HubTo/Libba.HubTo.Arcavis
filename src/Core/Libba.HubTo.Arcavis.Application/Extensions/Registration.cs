@@ -9,7 +9,7 @@ namespace Libba.HubTo.Arcavis.Application.Extensions;
 
 public static class Registration
 {
-    public static IServiceCollection AddArcavisMapper(this IServiceCollection services)
+    public static IServiceCollection AddApplicationRegistration(this IServiceCollection services)
     {
         var assm = Assembly.GetExecutingAssembly();
 

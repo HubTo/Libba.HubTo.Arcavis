@@ -1,4 +1,5 @@
 using Libba.HubTo.Arcavis.Infrastructure.Persistence.Extensions;
+using Libba.HubTo.Arcavis.Infrastructure.Redis.Extensions;
 using Libba.HubTo.Arcavis.Application.Extensions;
 using Libba.HubTo.Arcavis.WebApi.ActionFilters;
 using Libba.HubTo.Arcavis.WebApi.Middlewares;
@@ -7,7 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddEfCoreRegistration(builder.Configuration);
-builder.Services.AddArcavisMapper();
+builder.Services.AddApplicationRegistration();
+builder.Services.AddRedisRegistration(builder.Configuration);
 
 
 builder.Services.AddControllers();
