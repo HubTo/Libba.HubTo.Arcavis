@@ -1,7 +1,7 @@
 ﻿using Libba.HubTo.Arcavis.Application.Interfaces.Repositories.UserRole;
 using Libba.HubTo.Arcavis.Infrastructure.Persistence.Context;
 using Libba.HubTo.Arcavis.Application.Interfaces;
-using Libba.HubTo.Arcavis.Domain.Models;
+using Libba.HubTo.Arcavis.Domain.Entities;
 
 namespace Libba.HubTo.Arcavis.Infrastructure.Persistence.Repositories.UserRole;
 

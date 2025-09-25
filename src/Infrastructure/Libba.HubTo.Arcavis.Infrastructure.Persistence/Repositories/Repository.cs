@@ -1,6 +1,6 @@
 ﻿using Libba.HubTo.Arcavis.Application.Interfaces;
 using Libba.HubTo.Arcavis.Application.Interfaces.Repositories;
-using Libba.HubTo.Arcavis.Domain.Models;
+using Libba.HubTo.Arcavis.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 

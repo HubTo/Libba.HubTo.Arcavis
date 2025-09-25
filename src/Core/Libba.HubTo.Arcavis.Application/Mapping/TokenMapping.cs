@@ -1,6 +1,6 @@
 ﻿using Libba.HubTo.Arcavis.Application.Services.Token.Commands;
 using Libba.HubTo.Arcavis.Application.Services.Token.Dtos;
-using Libba.HubTo.Arcavis.Domain.Models;
+using Libba.HubTo.Arcavis.Domain.Entities;
 using AutoMapper;
 
 namespace Libba.HubTo.Arcavis.Application.Mapping;

@@ -1,7 +1,8 @@
-﻿using Libba.HubTo.Arcavis.Application.Services.Role.Commands;
-using Libba.HubTo.Arcavis.Application.Services.Role.Dtos;
-using Libba.HubTo.Arcavis.Domain.Models;
+﻿using Libba.HubTo.Arcavis.Application.Services.Role.Dtos;
+using Libba.HubTo.Arcavis.Domain.Entities;
 using AutoMapper;
+using Libba.HubTo.Arcavis.Application.Features.Role.CreateRole;
+using Libba.HubTo.Arcavis.Application.Features.Role.UpdateRole;
 
 namespace Libba.HubTo.Arcavis.Application.Mapping;
 

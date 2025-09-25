@@ -27,24 +27,6 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 }
 
-app.MapGet("/docs", async context =>
-{
-    context.Response.ContentType = "text/html";
-    await context.Response.WriteAsync(@"
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <title>Arcavis API Docs</title>
-        <meta charset='UTF-8'/>
-        <script src='https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js'></script>
-      </head>
-      <body>
-        <redoc spec-url='/openapi.json'></redoc>
-      </body>
-    </html>");
-});
-
-
 app.UseMiddleware<GlobalExceptionHandlingMiddleware>();
 app.UseMiddleware<RequestContextMiddleware>();
 

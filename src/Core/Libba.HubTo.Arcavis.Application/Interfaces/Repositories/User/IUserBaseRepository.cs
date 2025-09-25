@@ -1,4 +1,4 @@
-﻿using Libba.HubTo.Arcavis.Domain.Models;
+﻿using Libba.HubTo.Arcavis.Domain.Entities;
 
 namespace Libba.HubTo.Arcavis.Application.Interfaces.Repositories.User;
 

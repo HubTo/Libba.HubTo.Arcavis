@@ -1,7 +1,8 @@
-﻿using Libba.HubTo.Arcavis.Application.Services.Endpoint.Commands;
-using Libba.HubTo.Arcavis.Application.Services.Endpoint.Dtos;
-using Libba.HubTo.Arcavis.Domain.Models;
+﻿using Libba.HubTo.Arcavis.Application.Services.Endpoint.Dtos;
+using Libba.HubTo.Arcavis.Domain.Entities;
 using AutoMapper;
+using Libba.HubTo.Arcavis.Application.Features.Endpoint.CreateEndpoint;
+using Libba.HubTo.Arcavis.Application.Features.Endpoint.UpdateEndpoint;
 
 namespace Libba.HubTo.Arcavis.Application.Mapping;
 

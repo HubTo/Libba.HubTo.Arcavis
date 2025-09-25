@@ -1,4 +1,4 @@
-﻿using Libba.HubTo.Arcavis.Domain.Models;
+﻿using Libba.HubTo.Arcavis.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Libba.HubTo.Arcavis.Infrastructure.Persistence.Context;

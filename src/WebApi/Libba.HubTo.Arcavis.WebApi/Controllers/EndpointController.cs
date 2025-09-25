@@ -2,6 +2,8 @@
 using Libba.HubTo.Arcavis.Application.Services.Endpoint.Queries;
 using Libba.HubTo.Arcavis.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Libba.HubTo.Arcavis.Application.Features.Endpoint.CreateEndpoint;
+using Libba.HubTo.Arcavis.Application.Features.Endpoint.UpdateEndpoint;
 
 namespace Libba.HubTo.Arcavis.WebApi.Controllers;
 

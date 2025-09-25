@@ -1,7 +1,8 @@
-﻿using Libba.HubTo.Arcavis.Application.Services.User.Commands;
-using Libba.HubTo.Arcavis.Application.Services.User.Queries;
+﻿using Libba.HubTo.Arcavis.Application.Services.User.Queries;
 using Libba.HubTo.Arcavis.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Libba.HubTo.Arcavis.Application.Features.User.CreateUser;
+using Libba.HubTo.Arcavis.Application.Features.User.UpdateUser;
 
 namespace Libba.HubTo.Arcavis.WebApi.Controllers;
 

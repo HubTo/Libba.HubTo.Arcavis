@@ -1,7 +1,8 @@
-﻿using Libba.HubTo.Arcavis.Application.Services.User.Commands;
-using Libba.HubTo.Arcavis.Application.Services.User.Dtos;
-using Libba.HubTo.Arcavis.Domain.Models;
+﻿using Libba.HubTo.Arcavis.Application.Services.User.Dtos;
+using Libba.HubTo.Arcavis.Domain.Entities;
 using AutoMapper;
+using Libba.HubTo.Arcavis.Application.Features.User.CreateUser;
+using Libba.HubTo.Arcavis.Application.Features.User.UpdateUser;
 
 namespace Libba.HubTo.Arcavis.Application.Mapping;
 

@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Libba.HubTo.Arcavis.Domain.Models;
+using Libba.HubTo.Arcavis.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Libba.HubTo.Arcavis.Infrastructure.Persistence.Configuration;
