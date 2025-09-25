@@ -1,10 +1,9 @@
 ﻿using Libba.HubTo.Arcavis.Application.Interfaces.Repositories.Token;
-using Libba.HubTo.Arcavis.Application.Services.Token.Commands;
 using Libba.HubTo.Arcavis.Application.Interfaces;
 using Libba.HubTo.Arcavis.Application.CQRS;
 using Microsoft.Extensions.Logging;
 
-namespace Libba.HubTo.Arcavis.Application.Services.Token.RequestHandlers.Commands;
+namespace Libba.HubTo.Arcavis.Application.Features.Token.UpdateToken;
 
 public class UpdateTokenCommandHandler : ICommandHandler<UpdateTokenCommand, Guid>
 {

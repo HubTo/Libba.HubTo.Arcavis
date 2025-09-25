@@ -1,9 +1,10 @@
-﻿using Libba.HubTo.Arcavis.Application.Services.Endpoint.Commands;
-using Libba.HubTo.Arcavis.Application.Services.Endpoint.Queries;
-using Libba.HubTo.Arcavis.Application.Interfaces;
-using Microsoft.AspNetCore.Mvc;
+﻿using Libba.HubTo.Arcavis.Application.Features.Endpoint.GetAllEndpoints;
+using Libba.HubTo.Arcavis.Application.Features.Endpoint.GetEndpointById;
 using Libba.HubTo.Arcavis.Application.Features.Endpoint.CreateEndpoint;
 using Libba.HubTo.Arcavis.Application.Features.Endpoint.UpdateEndpoint;
+using Libba.HubTo.Arcavis.Application.Features.Endpoint.DeleteEndpoint;
+using Libba.HubTo.Arcavis.Application.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Libba.HubTo.Arcavis.WebApi.Controllers;
 

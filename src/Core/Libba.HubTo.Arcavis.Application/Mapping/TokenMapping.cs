@@ -1,5 +1,7 @@
-﻿using Libba.HubTo.Arcavis.Application.Services.Token.Commands;
-using Libba.HubTo.Arcavis.Application.Services.Token.Dtos;
+﻿using Libba.HubTo.Arcavis.Application.Features.Token.GetTokenById;
+using Libba.HubTo.Arcavis.Application.Features.Token.CreateToken;
+using Libba.HubTo.Arcavis.Application.Features.Token.UpdateToken;
+using Libba.HubTo.Arcavis.Application.Features.Token.GetAllToken;
 using Libba.HubTo.Arcavis.Domain.Entities;
 using AutoMapper;
 
@@ -15,7 +17,8 @@ public class TokenMapping : Profile
         #endregion
 
         #region Data to Business
-        CreateMap<TokenEntity, TokenDto>();
+        CreateMap<TokenEntity, TokenListItemDto>();
+        CreateMap<TokenEntity, TokenDetailDto>();
         #endregion
     }
 }

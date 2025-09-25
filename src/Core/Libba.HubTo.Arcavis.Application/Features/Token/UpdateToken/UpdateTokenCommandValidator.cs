@@ -1,7 +1,6 @@
-﻿using Libba.HubTo.Arcavis.Application.Services.Token.Commands;
-using FluentValidation;
+﻿using FluentValidation;
 
-namespace Libba.HubTo.Arcavis.Application.Services.Token.Validators;
+namespace Libba.HubTo.Arcavis.Application.Features.Token.UpdateToken;
 
 public class UpdateTokenCommandValidator : AbstractValidator<UpdateTokenCommand>
 {

@@ -1,8 +1,9 @@
-﻿using Libba.HubTo.Arcavis.Application.Services.User.Dtos;
+﻿using Libba.HubTo.Arcavis.Application.Features.User.GetUserById;
+using Libba.HubTo.Arcavis.Application.Features.User.CreateUser;
+using Libba.HubTo.Arcavis.Application.Features.User.GetAllUser;
+using Libba.HubTo.Arcavis.Application.Features.User.UpdateUser;
 using Libba.HubTo.Arcavis.Domain.Entities;
 using AutoMapper;
-using Libba.HubTo.Arcavis.Application.Features.User.CreateUser;
-using Libba.HubTo.Arcavis.Application.Features.User.UpdateUser;
 
 namespace Libba.HubTo.Arcavis.Application.Mapping;
 
@@ -16,7 +17,8 @@ public class UserMapping : Profile
         #endregion
 
         #region Data to Business
-        CreateMap<UserEntity, UserDto>();
+        CreateMap<UserEntity, UserDetailDto>();
+        CreateMap<UserEntity, UserListItemDto>();
         #endregion
     }
 }

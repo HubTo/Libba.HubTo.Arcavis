@@ -1,8 +1,9 @@
-﻿using Libba.HubTo.Arcavis.Application.Services.RoleEndpoint.Dtos;
-using Libba.HubTo.Arcavis.Domain.Entities;
-using AutoMapper;
+﻿using Libba.HubTo.Arcavis.Application.Features.RoleEndpoint.GetRoleEndpointById;
+using Libba.HubTo.Arcavis.Application.Features.RoleEndpoint.GetAllRoleEndpoint;
 using Libba.HubTo.Arcavis.Application.Features.RoleEndpoint.CreateRoleEndpoint;
 using Libba.HubTo.Arcavis.Application.Features.RoleEndpoint.UpdateRoleEndpoint;
+using Libba.HubTo.Arcavis.Domain.Entities;
+using AutoMapper;
 
 namespace Libba.HubTo.Arcavis.Application.Mapping;
 
@@ -16,7 +17,8 @@ public class RoleEndpointMapping : Profile
         #endregion
 
         #region Data to Business
-        CreateMap<RoleEndpointEntity, RoleEndpointDto>();
+        CreateMap<RoleEndpointEntity, RoleEndpointListItemDto>();
+        CreateMap<RoleEndpointEntity, RoleEndpointDetailDto>();
         #endregion
     }
 }

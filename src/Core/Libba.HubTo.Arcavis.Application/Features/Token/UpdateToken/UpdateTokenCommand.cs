@@ -1,6 +1,6 @@
 ﻿using Libba.HubTo.Arcavis.Application.CQRS;
 
-namespace Libba.HubTo.Arcavis.Application.Services.Token.Commands;
+namespace Libba.HubTo.Arcavis.Application.Features.Token.UpdateToken;
 
 public record UpdateTokenCommand
 (
