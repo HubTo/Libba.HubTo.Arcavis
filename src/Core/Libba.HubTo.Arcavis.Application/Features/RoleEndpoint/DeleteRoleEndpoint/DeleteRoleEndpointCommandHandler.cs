@@ -1,5 +1,4 @@
 ﻿using Libba.HubTo.Arcavis.Application.Interfaces.Repositories.RoleEndpoint;
-using Libba.HubTo.Arcavis.Application.Interfaces;
 using Libba.HubTo.Arcavis.Application.CQRS;
 using Microsoft.Extensions.Logging;
 
@@ -10,17 +9,14 @@ public class DeleteRoleEndpointCommandHandler : ICommandHandler<DeleteRoleEndpoi
     #region Dependencies
     private readonly ILogger<DeleteRoleEndpointCommandHandler> _logger;
     private readonly IRoleEndpointRepository _roleEndpointRepository;
-    private readonly IArcavisMapper _mapper;
 
 
     public DeleteRoleEndpointCommandHandler(
         ILogger<DeleteRoleEndpointCommandHandler> logger,
-        IRoleEndpointRepository roleEndpointRepository,
-        IArcavisMapper mapper)
+        IRoleEndpointRepository roleEndpointRepository)
     {
         _logger = logger;
         _roleEndpointRepository = roleEndpointRepository;
-        _mapper = mapper;
     }
     #endregion
 

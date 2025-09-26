@@ -37,6 +37,33 @@ public interface IRepository<T> where T : BaseEntity
     Task<T?> GetFirstOrDefaultAsync(Expression<Func<T, bool>> predicate, CancellationToken cancellationToken = default);
 
     /// <summary>
+    /// Checks if an entity with the given unique identifier exists. This is more efficient than GetByIdAsync for existence checks.
+    /// </summary>
+    /// <param name="id">The unique identifier of the entity.</param>
+    /// <returns>True if the entity exists, otherwise false.</returns>
+    Task<bool> ExistsAsync(Guid id, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Checks if any entity matching the given predicate exists. This is more efficient than GetFirstOrDefaultAsync for existence checks.
+    /// </summary>
+    /// <param name="predicate">The filter condition.</param>
+    /// <returns>True if any entity satisfies the condition, otherwise false.</returns>
+    Task<bool> ExistsAsync(Expression<Func<T, bool>> predicate, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Counts the total number of entities.
+    /// </summary>
+    /// <returns>The total count of entities.</returns>
+    Task<int> CountAsync(CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Counts the number of entities matching the given predicate.
+    /// </summary>
+    /// <param name="predicate">The filter condition.</param>
+    /// <returns>The count of entities that satisfy the condition.</returns>
+    Task<int> CountAsync(Expression<Func<T, bool>> predicate, CancellationToken cancellationToken = default);
+
+    /// <summary>
     /// Adds a new entity.
     /// </summary>
     /// <param name="entity">The entity to add.</param>
@@ -70,4 +97,3 @@ public interface IRepository<T> where T : BaseEntity
     /// <returns>A task representing the asynchronous operation.</returns>
     Task SaveAsync(CancellationToken cancellationToken = default);
 }
-

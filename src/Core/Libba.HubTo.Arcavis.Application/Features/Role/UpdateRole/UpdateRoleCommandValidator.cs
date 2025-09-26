@@ -4,7 +4,14 @@ namespace Libba.HubTo.Arcavis.Application.Features.Role.UpdateRole;
 
 public class UpdateRoleCommandValidator : AbstractValidator<UpdateRoleCommand>
 {
+    #region Dependencies
     public UpdateRoleCommandValidator()
+    {
+        InitializeRules();
+    }
+    #endregion
+
+    public void InitializeRules()
     {
         RuleFor(x => x.Id)
             .NotEmpty().WithMessage("Id cannot be empty.");

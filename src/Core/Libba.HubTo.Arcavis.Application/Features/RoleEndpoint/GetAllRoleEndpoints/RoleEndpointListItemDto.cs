@@ -1,4 +1,4 @@
-﻿namespace Libba.HubTo.Arcavis.Application.Features.RoleEndpoint.GetAllRoleEndpoint;
+﻿namespace Libba.HubTo.Arcavis.Application.Features.RoleEndpoint.GetAllRoleEndpoints;
 
 public class RoleEndpointListItemDto
 {

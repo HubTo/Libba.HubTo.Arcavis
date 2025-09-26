@@ -4,7 +4,14 @@ namespace Libba.HubTo.Arcavis.Application.Features.Endpoint.UpdateEndpoint;
 
 public class UpdateEndpointCommandValidator : AbstractValidator<UpdateEndpointCommand>
 {
+    #region Dependencies
     public UpdateEndpointCommandValidator()
+    {
+        InitializeRules();
+    }
+    #endregion
+
+    public void InitializeRules()
     {
         RuleFor(x => x.Id)
             .NotEmpty().WithMessage("Id cannot be empty.");

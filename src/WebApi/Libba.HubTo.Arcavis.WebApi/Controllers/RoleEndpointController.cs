@@ -1,8 +1,8 @@
 ﻿using Libba.HubTo.Arcavis.Application.Features.RoleEndpoint.GetRoleEndpointById;
+using Libba.HubTo.Arcavis.Application.Features.RoleEndpoint.GetAllRoleEndpoints;
 using Libba.HubTo.Arcavis.Application.Features.RoleEndpoint.UpdateRoleEndpoint;
 using Libba.HubTo.Arcavis.Application.Features.RoleEndpoint.CreateRoleEndpoint;
 using Libba.HubTo.Arcavis.Application.Features.RoleEndpoint.DeleteRoleEndpoint;
-using Libba.HubTo.Arcavis.Application.Features.RoleEndpoint.GetAllRoleEndpoint;
 using Libba.HubTo.Arcavis.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 

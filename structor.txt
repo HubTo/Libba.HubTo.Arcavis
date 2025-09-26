@@ -1,0 +1,981 @@
+Folder PATH listing
+Volume serial number is 9C28-DA4A
+C:.
+¦   .dockerignore
+¦   .gitattributes
+¦   .gitignore
+¦   Libba.HubTo.Arcavis.slnx
+¦   LICENSE.txt
+¦   README.md
+¦   structor.txt
+¦   
++---.github
+¦   +---workflows
++---DbScripts
+¦       Scripts.txt
+¦       
++---src
+¦   +---Common
+¦   ¦   +---Libba.HubTo.Arcavis.Common
+¦   ¦       ¦   Libba.HubTo.Arcavis.Common.csproj
+¦   ¦       ¦   
+¦   ¦       +---bin
+¦   ¦       ¦   +---Debug
+¦   ¦       ¦       +---net10.0
+¦   ¦       ¦               Libba.HubTo.Arcavis.Common.deps.json
+¦   ¦       ¦               Libba.HubTo.Arcavis.Common.dll
+¦   ¦       ¦               Libba.HubTo.Arcavis.Common.pdb
+¦   ¦       ¦               
+¦   ¦       +---Helpers
+¦   ¦       ¦   +---Argon2
+¦   ¦       ¦           Argon2Helper.cs
+¦   ¦       ¦           
+¦   ¦       +---obj
+¦   ¦           ¦   Libba.HubTo.Arcavis.Common.csproj.nuget.dgspec.json
+¦   ¦           ¦   Libba.HubTo.Arcavis.Common.csproj.nuget.g.props
+¦   ¦           ¦   Libba.HubTo.Arcavis.Common.csproj.nuget.g.targets
+¦   ¦           ¦   project.assets.json
+¦   ¦           ¦   project.nuget.cache
+¦   ¦           ¦   
+¦   ¦           +---Debug
+¦   ¦               +---net10.0
+¦   ¦                   ¦   .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
+¦   ¦                   ¦   Libba.HubTo.Arcavis.Common.AssemblyInfo.cs
+¦   ¦                   ¦   Libba.HubTo.Arcavis.Common.AssemblyInfoInputs.cache
+¦   ¦                   ¦   Libba.HubTo.Arcavis.Common.assets.cache
+¦   ¦                   ¦   Libba.HubTo.Arcavis.Common.csproj.AssemblyReference.cache
+¦   ¦                   ¦   Libba.HubTo.Arcavis.Common.csproj.CoreCompileInputs.cache
+¦   ¦                   ¦   Libba.HubTo.Arcavis.Common.csproj.FileListAbsolute.txt
+¦   ¦                   ¦   Libba.HubTo.Arcavis.Common.dll
+¦   ¦                   ¦   Libba.HubTo.Arcavis.Common.GeneratedMSBuildEditorConfig.editorconfig
+¦   ¦                   ¦   Libba.HubTo.Arcavis.Common.GlobalUsings.g.cs
+¦   ¦                   ¦   Libba.HubTo.Arcavis.Common.pdb
+¦   ¦                   ¦   Libba.HubTo.Arcavis.Common.sourcelink.json
+¦   ¦                   ¦   
+¦   ¦                   +---ref
+¦   ¦                   ¦       Libba.HubTo.Arcavis.Common.dll
+¦   ¦                   ¦       
+¦   ¦                   +---refint
+¦   ¦                           Libba.HubTo.Arcavis.Common.dll
+¦   ¦                           
+¦   +---Core
+¦   ¦   +---Libba.HubTo.Arcavis.Application
+¦   ¦   ¦   ¦   Libba.HubTo.Arcavis.Application.csproj
+¦   ¦   ¦   ¦   
+¦   ¦   ¦   +---bin
+¦   ¦   ¦   ¦   +---Debug
+¦   ¦   ¦   ¦       +---net10.0
+¦   ¦   ¦   ¦               Libba.HubTo.Arcavis.Application.deps.json
+¦   ¦   ¦   ¦               Libba.HubTo.Arcavis.Application.dll
+¦   ¦   ¦   ¦               Libba.HubTo.Arcavis.Application.pdb
+¦   ¦   ¦   ¦               Libba.HubTo.Arcavis.Common.dll
+¦   ¦   ¦   ¦               Libba.HubTo.Arcavis.Common.pdb
+¦   ¦   ¦   ¦               Libba.HubTo.Arcavis.Domain.dll
+¦   ¦   ¦   ¦               Libba.HubTo.Arcavis.Domain.pdb
+¦   ¦   ¦   ¦               
+¦   ¦   ¦   +---CQRS
+¦   ¦   ¦   ¦       ICommand.cs
+¦   ¦   ¦   ¦       ICommandHandler.cs
+¦   ¦   ¦   ¦       IQuery.cs
+¦   ¦   ¦   ¦       IQueryHandler.cs
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---Extensions
+¦   ¦   ¦   ¦       Registration.cs
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---Features
+¦   ¦   ¦   ¦   +---Endpoint
+¦   ¦   ¦   ¦   ¦   +---CreateEndpoint
+¦   ¦   ¦   ¦   ¦   ¦       CreateEndpointCommand.cs
+¦   ¦   ¦   ¦   ¦   ¦       CreateEndpointCommandHandler.cs
+¦   ¦   ¦   ¦   ¦   ¦       CreateEndpointCommandValidator.cs
+¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   +---DeleteEndpoint
+¦   ¦   ¦   ¦   ¦   ¦       DeleteEndpointCommand.cs
+¦   ¦   ¦   ¦   ¦   ¦       DeleteEndpointCommandHandler.cs
+¦   ¦   ¦   ¦   ¦   ¦       DeleteEndpointCommandValidator.cs
+¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   +---GetAllEndpoints
+¦   ¦   ¦   ¦   ¦   ¦       EndpointListItemDto.cs
+¦   ¦   ¦   ¦   ¦   ¦       GetAllEndpointsQuery.cs
+¦   ¦   ¦   ¦   ¦   ¦       GetAllEndpointsQueryHandler.cs
+¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   +---GetEndpointById
+¦   ¦   ¦   ¦   ¦   ¦       EndpointDetailDto.cs
+¦   ¦   ¦   ¦   ¦   ¦       GetEndpointByIdQuery.cs
+¦   ¦   ¦   ¦   ¦   ¦       GetEndpointByIdQueryHandler.cs
+¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   +---UpdateEndpoint
+¦   ¦   ¦   ¦   ¦           UpdateEndpointCommand.cs
+¦   ¦   ¦   ¦   ¦           UpdateEndpointCommandHandler.cs
+¦   ¦   ¦   ¦   ¦           UpdateEndpointCommandValidator.cs
+¦   ¦   ¦   ¦   ¦           
+¦   ¦   ¦   ¦   +---Role
+¦   ¦   ¦   ¦   ¦   +---CreateRole
+¦   ¦   ¦   ¦   ¦   ¦       CreateRoleCommand.cs
+¦   ¦   ¦   ¦   ¦   ¦       CreateRoleCommandHandler.cs
+¦   ¦   ¦   ¦   ¦   ¦       CreateRoleCommandValidator.cs
+¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   +---DeleteRole
+¦   ¦   ¦   ¦   ¦   ¦       DeleteRoleCommand.cs
+¦   ¦   ¦   ¦   ¦   ¦       DeleteRoleCommandHandler.cs
+¦   ¦   ¦   ¦   ¦   ¦       DeleteRoleCommandValidator.cs
+¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   +---GetAllRoles
+¦   ¦   ¦   ¦   ¦   ¦       GetAllRolesQuery.cs
+¦   ¦   ¦   ¦   ¦   ¦       GetAllRolesQueryHandler.cs
+¦   ¦   ¦   ¦   ¦   ¦       RoleListItemDto.cs
+¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   +---GetRoleById
+¦   ¦   ¦   ¦   ¦   ¦       GetRoleByIdQuery.cs
+¦   ¦   ¦   ¦   ¦   ¦       GetRoleByIdQueryHandler.cs
+¦   ¦   ¦   ¦   ¦   ¦       RoleDetailDto.cs
+¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   +---UpdateRole
+¦   ¦   ¦   ¦   ¦           UpdateRoleCommand.cs
+¦   ¦   ¦   ¦   ¦           UpdateRoleCommandHandler.cs
+¦   ¦   ¦   ¦   ¦           UpdateRoleCommandValidator.cs
+¦   ¦   ¦   ¦   ¦           
+¦   ¦   ¦   ¦   +---RoleEndpoint
+¦   ¦   ¦   ¦   ¦   +---CreateRoleEndpoint
+¦   ¦   ¦   ¦   ¦   ¦       CreateRoleEndpointCommand.cs
+¦   ¦   ¦   ¦   ¦   ¦       CreateRoleEndpointCommandHandler.cs
+¦   ¦   ¦   ¦   ¦   ¦       CreateRoleEndpointCommandValidator.cs
+¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   +---DeleteRoleEndpoint
+¦   ¦   ¦   ¦   ¦   ¦       DeleteRoleEndpointCommand.cs
+¦   ¦   ¦   ¦   ¦   ¦       DeleteRoleEndpointCommandHandler.cs
+¦   ¦   ¦   ¦   ¦   ¦       DeleteRoleEndpointCommandValidator.cs
+¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   +---GetAllRoleEndpoint
+¦   ¦   ¦   ¦   ¦   ¦       GetAllRoleEndpointsQuery.cs
+¦   ¦   ¦   ¦   ¦   ¦       GetAllRolesQueryHandler.cs
+¦   ¦   ¦   ¦   ¦   ¦       RoleEndpointListItemDto.cs
+¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   +---GetRoleEndpointById
+¦   ¦   ¦   ¦   ¦   ¦       GetRoleEndpointByIdQuery.cs
+¦   ¦   ¦   ¦   ¦   ¦       GetRoleEndpointByIdQueryHandler.cs
+¦   ¦   ¦   ¦   ¦   ¦       RoleEndpointDetailDto.cs
+¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   +---UpdateRoleEndpoint
+¦   ¦   ¦   ¦   ¦           UpdateRoleEndpointCommand.cs
+¦   ¦   ¦   ¦   ¦           UpdateRoleEndpointCommandHandler.cs
+¦   ¦   ¦   ¦   ¦           UpdateRoleEndpointCommandValidator.cs
+¦   ¦   ¦   ¦   ¦           
+¦   ¦   ¦   ¦   +---Token
+¦   ¦   ¦   ¦   ¦   +---CreateToken
+¦   ¦   ¦   ¦   ¦   ¦       CreateTokenCommand.cs
+¦   ¦   ¦   ¦   ¦   ¦       CreateTokenCommandHandler.cs
+¦   ¦   ¦   ¦   ¦   ¦       CreateTokenCommandValidator.cs
+¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   +---DeleteToken
+¦   ¦   ¦   ¦   ¦   ¦       DeleteTokenCommand.cs
+¦   ¦   ¦   ¦   ¦   ¦       DeleteTokenCommandHandler.cs
+¦   ¦   ¦   ¦   ¦   ¦       DeleteTokenCommandValidator.cs
+¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   +---GetAllToken
+¦   ¦   ¦   ¦   ¦   ¦       GetAllTokensQuery.cs
+¦   ¦   ¦   ¦   ¦   ¦       GetAllTokensQueryHandler.cs
+¦   ¦   ¦   ¦   ¦   ¦       TokenListItemDto.cs
+¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   +---GetTokenById
+¦   ¦   ¦   ¦   ¦   ¦       GetTokenByIdQuery.cs
+¦   ¦   ¦   ¦   ¦   ¦       GetTokenByIdQueryHandler.cs
+¦   ¦   ¦   ¦   ¦   ¦       TokenDetailDto.cs
+¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   +---UpdateToken
+¦   ¦   ¦   ¦   ¦           UpdateTokenCommand.cs
+¦   ¦   ¦   ¦   ¦           UpdateTokenCommandHandler.cs
+¦   ¦   ¦   ¦   ¦           UpdateTokenCommandValidator.cs
+¦   ¦   ¦   ¦   ¦           
+¦   ¦   ¦   ¦   +---User
+¦   ¦   ¦   ¦   ¦   +---CreateUser
+¦   ¦   ¦   ¦   ¦   ¦       CreateUserCommand.cs
+¦   ¦   ¦   ¦   ¦   ¦       CreateUserCommandHandler.cs
+¦   ¦   ¦   ¦   ¦   ¦       CreateUserCommandValidator.cs
+¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   +---DeleteUser
+¦   ¦   ¦   ¦   ¦   ¦       DeleteUserCommand.cs
+¦   ¦   ¦   ¦   ¦   ¦       DeleteUserCommandHandler.cs
+¦   ¦   ¦   ¦   ¦   ¦       DeleteUserCommandValidator.cs
+¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   +---GetAllUser
+¦   ¦   ¦   ¦   ¦   ¦       GetAllUsersQuery.cs
+¦   ¦   ¦   ¦   ¦   ¦       GetAllUsersQueryHandler.cs
+¦   ¦   ¦   ¦   ¦   ¦       UserListItemDto.cs
+¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   +---GetUserById
+¦   ¦   ¦   ¦   ¦   ¦       GetUserByIdQuery.cs
+¦   ¦   ¦   ¦   ¦   ¦       GetUserByIdQueryHandler.cs
+¦   ¦   ¦   ¦   ¦   ¦       UserDetailDto.cs
+¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   +---UpdateUser
+¦   ¦   ¦   ¦   ¦           UpdateUserCommand.cs
+¦   ¦   ¦   ¦   ¦           UpdateUserCommandHandler.cs
+¦   ¦   ¦   ¦   ¦           UpdateUserCommandValidator.cs
+¦   ¦   ¦   ¦   ¦           
+¦   ¦   ¦   ¦   +---UserRole
+¦   ¦   ¦   ¦       +---CreateUserRole
+¦   ¦   ¦   ¦       ¦       CreateUserRoleCommand.cs
+¦   ¦   ¦   ¦       ¦       CreateUserRoleCommandHandler.cs
+¦   ¦   ¦   ¦       ¦       CreateUserRoleCommandValidator.cs
+¦   ¦   ¦   ¦       ¦       
+¦   ¦   ¦   ¦       +---DeleteUserRole
+¦   ¦   ¦   ¦       ¦       DeleteUserRoleCommand.cs
+¦   ¦   ¦   ¦       ¦       DeleteUserRoleCommandHandler.cs
+¦   ¦   ¦   ¦       ¦       DeleteUserRoleCommandValidator.cs
+¦   ¦   ¦   ¦       ¦       
+¦   ¦   ¦   ¦       +---GetAllUserRole
+¦   ¦   ¦   ¦       ¦       GetAllUserRolesQuery.cs
+¦   ¦   ¦   ¦       ¦       GetAllUserRolesQueryHandler.cs
+¦   ¦   ¦   ¦       ¦       UserRoleListItemDto.cs
+¦   ¦   ¦   ¦       ¦       
+¦   ¦   ¦   ¦       +---GetUserRoleById
+¦   ¦   ¦   ¦       ¦       GetUserRoleByIdQuery.cs
+¦   ¦   ¦   ¦       ¦       GetUserRoleByIdQueryHandler.cs
+¦   ¦   ¦   ¦       ¦       UserRoleDetailDto.cs
+¦   ¦   ¦   ¦       ¦       
+¦   ¦   ¦   ¦       +---UpdateUserRole
+¦   ¦   ¦   ¦               UpdateUserRoleCommand.cs
+¦   ¦   ¦   ¦               UpdateUserRoleCommandHandler.cs
+¦   ¦   ¦   ¦               UpdateUserRoleCommandValidator.cs
+¦   ¦   ¦   ¦               
+¦   ¦   ¦   +---Interfaces
+¦   ¦   ¦   ¦   ¦   IArcavisCQRS.cs
+¦   ¦   ¦   ¦   ¦   IArcavisMapper.cs
+¦   ¦   ¦   ¦   ¦   IRequestContext.cs
+¦   ¦   ¦   ¦   ¦   
+¦   ¦   ¦   ¦   +---Caching
+¦   ¦   ¦   ¦   ¦       ICacheService.cs.cs
+¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   +---Repositories
+¦   ¦   ¦   ¦       ¦   IRepository.cs
+¦   ¦   ¦   ¦       ¦   
+¦   ¦   ¦   ¦       +---Endpoint
+¦   ¦   ¦   ¦       ¦       IEndpointBaseRepository.cs
+¦   ¦   ¦   ¦       ¦       IEndpointCustomRepository.cs
+¦   ¦   ¦   ¦       ¦       
+¦   ¦   ¦   ¦       +---Role
+¦   ¦   ¦   ¦       ¦       IRoleBaseRepository.cs
+¦   ¦   ¦   ¦       ¦       IRoleCustomRepository.cs
+¦   ¦   ¦   ¦       ¦       
+¦   ¦   ¦   ¦       +---RoleEndpoint
+¦   ¦   ¦   ¦       ¦       IRoleEndpointBaseRepository.cs
+¦   ¦   ¦   ¦       ¦       IRoleEndpointCustomRepository.cs
+¦   ¦   ¦   ¦       ¦       
+¦   ¦   ¦   ¦       +---Token
+¦   ¦   ¦   ¦       ¦       ITokenBaseRepository.cs
+¦   ¦   ¦   ¦       ¦       ITokenCustomRepository.cs
+¦   ¦   ¦   ¦       ¦       
+¦   ¦   ¦   ¦       +---User
+¦   ¦   ¦   ¦       ¦       IUserBaseRepository.cs
+¦   ¦   ¦   ¦       ¦       IUserCustomRepository.cs
+¦   ¦   ¦   ¦       ¦       
+¦   ¦   ¦   ¦       +---UserRole
+¦   ¦   ¦   ¦               IUserRoleBaseRepository.cs
+¦   ¦   ¦   ¦               IUserRoleCustomRepository.cs
+¦   ¦   ¦   ¦               
+¦   ¦   ¦   +---Mapping
+¦   ¦   ¦   ¦       ArcavisMapper.cs
+¦   ¦   ¦   ¦       EndpointMapping.cs
+¦   ¦   ¦   ¦       RoleEndpointMapping.cs
+¦   ¦   ¦   ¦       RoleMapping.cs
+¦   ¦   ¦   ¦       TokenMapping.cs
+¦   ¦   ¦   ¦       UserMapping.cs
+¦   ¦   ¦   ¦       UserRoleMapping.cs
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---obj
+¦   ¦   ¦   ¦   ¦   Libba.HubTo.Arcavis.Application.csproj.nuget.dgspec.json
+¦   ¦   ¦   ¦   ¦   Libba.HubTo.Arcavis.Application.csproj.nuget.g.props
+¦   ¦   ¦   ¦   ¦   Libba.HubTo.Arcavis.Application.csproj.nuget.g.targets
+¦   ¦   ¦   ¦   ¦   project.assets.json
+¦   ¦   ¦   ¦   ¦   project.nuget.cache
+¦   ¦   ¦   ¦   ¦   
+¦   ¦   ¦   ¦   +---Debug
+¦   ¦   ¦   ¦       +---net10.0
+¦   ¦   ¦   ¦           ¦   .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
+¦   ¦   ¦   ¦           ¦   Libba.Hu.331BF167.Up2Date
+¦   ¦   ¦   ¦           ¦   Libba.HubTo.Arcavis.Application.AssemblyInfo.cs
+¦   ¦   ¦   ¦           ¦   Libba.HubTo.Arcavis.Application.AssemblyInfoInputs.cache
+¦   ¦   ¦   ¦           ¦   Libba.HubTo.Arcavis.Application.assets.cache
+¦   ¦   ¦   ¦           ¦   Libba.HubTo.Arcavis.Application.csproj.AssemblyReference.cache
+¦   ¦   ¦   ¦           ¦   Libba.HubTo.Arcavis.Application.csproj.BuildWithSkipAnalyzers
+¦   ¦   ¦   ¦           ¦   Libba.HubTo.Arcavis.Application.csproj.CoreCompileInputs.cache
+¦   ¦   ¦   ¦           ¦   Libba.HubTo.Arcavis.Application.csproj.FileListAbsolute.txt
+¦   ¦   ¦   ¦           ¦   Libba.HubTo.Arcavis.Application.dll
+¦   ¦   ¦   ¦           ¦   Libba.HubTo.Arcavis.Application.GeneratedMSBuildEditorConfig.editorconfig
+¦   ¦   ¦   ¦           ¦   Libba.HubTo.Arcavis.Application.GlobalUsings.g.cs
+¦   ¦   ¦   ¦           ¦   Libba.HubTo.Arcavis.Application.pdb
+¦   ¦   ¦   ¦           ¦   Libba.HubTo.Arcavis.Application.sourcelink.json
+¦   ¦   ¦   ¦           ¦   
+¦   ¦   ¦   ¦           +---ref
+¦   ¦   ¦   ¦           ¦       Libba.HubTo.Arcavis.Application.dll
+¦   ¦   ¦   ¦           ¦       
+¦   ¦   ¦   ¦           +---refint
+¦   ¦   ¦   ¦                   Libba.HubTo.Arcavis.Application.dll
+¦   ¦   ¦   ¦                   
+¦   ¦   ¦   +---Services
+¦   ¦   ¦           ArcavisCQRS.cs
+¦   ¦   ¦           RequestContext.cs
+¦   ¦   ¦           
+¦   ¦   +---Libba.HubTo.Arcavis.Domain
+¦   ¦       ¦   Libba.HubTo.Arcavis.Domain.csproj
+¦   ¦       ¦   
+¦   ¦       +---bin
+¦   ¦       ¦   +---Debug
+¦   ¦       ¦       +---net10.0
+¦   ¦       ¦               Libba.HubTo.Arcavis.Domain.deps.json
+¦   ¦       ¦               Libba.HubTo.Arcavis.Domain.dll
+¦   ¦       ¦               Libba.HubTo.Arcavis.Domain.pdb
+¦   ¦       ¦               
+¦   ¦       +---Entities
+¦   ¦       ¦       BaseEntity.cs
+¦   ¦       ¦       EndpointEntity.cs
+¦   ¦       ¦       RoleEndpointEntity .cs
+¦   ¦       ¦       RoleEntity .cs
+¦   ¦       ¦       TokenEntity.cs
+¦   ¦       ¦       UserEntity.cs
+¦   ¦       ¦       UserRoleEntity .cs
+¦   ¦       ¦       
+¦   ¦       +---Enums
+¦   ¦       ¦       HttpVerb.cs
+¦   ¦       ¦       
+¦   ¦       +---obj
+¦   ¦           ¦   Libba.HubTo.Arcavis.Domain.csproj.nuget.dgspec.json
+¦   ¦           ¦   Libba.HubTo.Arcavis.Domain.csproj.nuget.g.props
+¦   ¦           ¦   Libba.HubTo.Arcavis.Domain.csproj.nuget.g.targets
+¦   ¦           ¦   project.assets.json
+¦   ¦           ¦   project.nuget.cache
+¦   ¦           ¦   
+¦   ¦           +---Debug
+¦   ¦               +---net10.0
+¦   ¦                   ¦   .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
+¦   ¦                   ¦   Libba.HubTo.Arcavis.Domain.AssemblyInfo.cs
+¦   ¦                   ¦   Libba.HubTo.Arcavis.Domain.AssemblyInfoInputs.cache
+¦   ¦                   ¦   Libba.HubTo.Arcavis.Domain.assets.cache
+¦   ¦                   ¦   Libba.HubTo.Arcavis.Domain.csproj.BuildWithSkipAnalyzers
+¦   ¦                   ¦   Libba.HubTo.Arcavis.Domain.csproj.CoreCompileInputs.cache
+¦   ¦                   ¦   Libba.HubTo.Arcavis.Domain.csproj.FileListAbsolute.txt
+¦   ¦                   ¦   Libba.HubTo.Arcavis.Domain.dll
+¦   ¦                   ¦   Libba.HubTo.Arcavis.Domain.GeneratedMSBuildEditorConfig.editorconfig
+¦   ¦                   ¦   Libba.HubTo.Arcavis.Domain.GlobalUsings.g.cs
+¦   ¦                   ¦   Libba.HubTo.Arcavis.Domain.pdb
+¦   ¦                   ¦   Libba.HubTo.Arcavis.Domain.sourcelink.json
+¦   ¦                   ¦   
+¦   ¦                   +---ref
+¦   ¦                   ¦       Libba.HubTo.Arcavis.Domain.dll
+¦   ¦                   ¦       
+¦   ¦                   +---refint
+¦   ¦                           Libba.HubTo.Arcavis.Domain.dll
+¦   ¦                           
+¦   +---Infrastructure
+¦   ¦   +---Libba.HubTo.Arcavis.Infrastructure.Persistence
+¦   ¦   ¦   ¦   Libba.HubTo.Arcavis.Infrastructure.Persistence.csproj
+¦   ¦   ¦   ¦   
+¦   ¦   ¦   +---bin
+¦   ¦   ¦   ¦   +---Debug
+¦   ¦   ¦   ¦       +---net10.0
+¦   ¦   ¦   ¦               Libba.HubTo.Arcavis.Application.dll
+¦   ¦   ¦   ¦               Libba.HubTo.Arcavis.Application.pdb
+¦   ¦   ¦   ¦               Libba.HubTo.Arcavis.Common.dll
+¦   ¦   ¦   ¦               Libba.HubTo.Arcavis.Common.pdb
+¦   ¦   ¦   ¦               Libba.HubTo.Arcavis.Domain.dll
+¦   ¦   ¦   ¦               Libba.HubTo.Arcavis.Domain.pdb
+¦   ¦   ¦   ¦               Libba.HubTo.Arcavis.Infrastructure.Persistence.deps.json
+¦   ¦   ¦   ¦               Libba.HubTo.Arcavis.Infrastructure.Persistence.dll
+¦   ¦   ¦   ¦               Libba.HubTo.Arcavis.Infrastructure.Persistence.pdb
+¦   ¦   ¦   ¦               Libba.HubTo.Arcavis.Infrastructure.Persistence.runtimeconfig.json
+¦   ¦   ¦   ¦               
+¦   ¦   ¦   +---Configuration
+¦   ¦   ¦   ¦       BaseConfiguration.cs
+¦   ¦   ¦   ¦       EndpointConfiguration.cs
+¦   ¦   ¦   ¦       RoleConfiguration .cs
+¦   ¦   ¦   ¦       RoleEndpointConfiguration.cs
+¦   ¦   ¦   ¦       TokenConfiguration.cs
+¦   ¦   ¦   ¦       UserConfiguration.cs
+¦   ¦   ¦   ¦       UserRoleConfiguration.cs
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---Context
+¦   ¦   ¦   ¦       ArcavisContext.cs
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---Extensions
+¦   ¦   ¦   ¦       Registration.cs
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---obj
+¦   ¦   ¦   ¦   ¦   Libba.HubTo.Arcavis.Infrastructure.Persistence.csproj.nuget.dgspec.json
+¦   ¦   ¦   ¦   ¦   Libba.HubTo.Arcavis.Infrastructure.Persistence.csproj.nuget.g.props
+¦   ¦   ¦   ¦   ¦   Libba.HubTo.Arcavis.Infrastructure.Persistence.csproj.nuget.g.targets
+¦   ¦   ¦   ¦   ¦   project.assets.json
+¦   ¦   ¦   ¦   ¦   project.nuget.cache
+¦   ¦   ¦   ¦   ¦   
+¦   ¦   ¦   ¦   +---Debug
+¦   ¦   ¦   ¦       +---net10.0
+¦   ¦   ¦   ¦           ¦   .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
+¦   ¦   ¦   ¦           ¦   Libba.Hu.6D73FCAF.Up2Date
+¦   ¦   ¦   ¦           ¦   Libba.HubTo.Arcavis.Infrastructure.Persistence.AssemblyInfo.cs
+¦   ¦   ¦   ¦           ¦   Libba.HubTo.Arcavis.Infrastructure.Persistence.AssemblyInfoInputs.cache
+¦   ¦   ¦   ¦           ¦   Libba.HubTo.Arcavis.Infrastructure.Persistence.assets.cache
+¦   ¦   ¦   ¦           ¦   Libba.HubTo.Arcavis.Infrastructure.Persistence.csproj.AssemblyReference.cache
+¦   ¦   ¦   ¦           ¦   Libba.HubTo.Arcavis.Infrastructure.Persistence.csproj.BuildWithSkipAnalyzers
+¦   ¦   ¦   ¦           ¦   Libba.HubTo.Arcavis.Infrastructure.Persistence.csproj.CoreCompileInputs.cache
+¦   ¦   ¦   ¦           ¦   Libba.HubTo.Arcavis.Infrastructure.Persistence.csproj.FileListAbsolute.txt
+¦   ¦   ¦   ¦           ¦   Libba.HubTo.Arcavis.Infrastructure.Persistence.dll
+¦   ¦   ¦   ¦           ¦   Libba.HubTo.Arcavis.Infrastructure.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+¦   ¦   ¦   ¦           ¦   Libba.HubTo.Arcavis.Infrastructure.Persistence.genruntimeconfig.cache
+¦   ¦   ¦   ¦           ¦   Libba.HubTo.Arcavis.Infrastructure.Persistence.GlobalUsings.g.cs
+¦   ¦   ¦   ¦           ¦   Libba.HubTo.Arcavis.Infrastructure.Persistence.pdb
+¦   ¦   ¦   ¦           ¦   Libba.HubTo.Arcavis.Infrastructure.Persistence.sourcelink.json
+¦   ¦   ¦   ¦           ¦   
+¦   ¦   ¦   ¦           +---ref
+¦   ¦   ¦   ¦           ¦       Libba.HubTo.Arcavis.Infrastructure.Persistence.dll
+¦   ¦   ¦   ¦           ¦       
+¦   ¦   ¦   ¦           +---refint
+¦   ¦   ¦   ¦                   Libba.HubTo.Arcavis.Infrastructure.Persistence.dll
+¦   ¦   ¦   ¦                   
+¦   ¦   ¦   +---Repositories
+¦   ¦   ¦       ¦   Repository.cs
+¦   ¦   ¦       ¦   
+¦   ¦   ¦       +---Endpoint
+¦   ¦   ¦       ¦       EndpointBaseRepository.cs
+¦   ¦   ¦       ¦       EndpointCustomRepository.cs
+¦   ¦   ¦       ¦       
+¦   ¦   ¦       +---Role
+¦   ¦   ¦       ¦       RoleBaseRepository.cs
+¦   ¦   ¦       ¦       RoleCustomRepository.cs
+¦   ¦   ¦       ¦       
+¦   ¦   ¦       +---RoleEndpoint
+¦   ¦   ¦       ¦       RoleEndpointBaseRepository.cs
+¦   ¦   ¦       ¦       RoleEndpointCustomRepository.cs
+¦   ¦   ¦       ¦       
+¦   ¦   ¦       +---Token
+¦   ¦   ¦       ¦       TokenBaseRepository.cs
+¦   ¦   ¦       ¦       TokenCustomRepository.cs
+¦   ¦   ¦       ¦       
+¦   ¦   ¦       +---User
+¦   ¦   ¦       ¦       UserBaseRepository.cs
+¦   ¦   ¦       ¦       UserCustomRepository.cs
+¦   ¦   ¦       ¦       
+¦   ¦   ¦       +---UserRole
+¦   ¦   ¦               UserRoleBaseRepository.cs
+¦   ¦   ¦               UserRoleCustomRepository.cs
+¦   ¦   ¦               
+¦   ¦   +---Libba.HubTo.Arcavis.Infrastructure.Redis
+¦   ¦       ¦   Libba.HubTo.Arcavis.Infrastructure.Redis.csproj
+¦   ¦       ¦   
+¦   ¦       +---bin
+¦   ¦       ¦   +---Debug
+¦   ¦       ¦       +---net10.0
+¦   ¦       ¦               Libba.HubTo.Arcavis.Application.dll
+¦   ¦       ¦               Libba.HubTo.Arcavis.Application.pdb
+¦   ¦       ¦               Libba.HubTo.Arcavis.Common.dll
+¦   ¦       ¦               Libba.HubTo.Arcavis.Common.pdb
+¦   ¦       ¦               Libba.HubTo.Arcavis.Domain.dll
+¦   ¦       ¦               Libba.HubTo.Arcavis.Domain.pdb
+¦   ¦       ¦               Libba.HubTo.Arcavis.Infrastructure.Redis.deps.json
+¦   ¦       ¦               Libba.HubTo.Arcavis.Infrastructure.Redis.dll
+¦   ¦       ¦               Libba.HubTo.Arcavis.Infrastructure.Redis.pdb
+¦   ¦       ¦               
+¦   ¦       +---Extensions
+¦   ¦       ¦       Registration.cs
+¦   ¦       ¦       
+¦   ¦       +---obj
+¦   ¦       ¦   ¦   Libba.HubTo.Arcavis.Infrastructure.Redis.csproj.nuget.dgspec.json
+¦   ¦       ¦   ¦   Libba.HubTo.Arcavis.Infrastructure.Redis.csproj.nuget.g.props
+¦   ¦       ¦   ¦   Libba.HubTo.Arcavis.Infrastructure.Redis.csproj.nuget.g.targets
+¦   ¦       ¦   ¦   project.assets.json
+¦   ¦       ¦   ¦   project.nuget.cache
+¦   ¦       ¦   ¦   
+¦   ¦       ¦   +---Debug
+¦   ¦       ¦       +---net10.0
+¦   ¦       ¦           ¦   .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
+¦   ¦       ¦           ¦   Libba.Hu.E20AF45D.Up2Date
+¦   ¦       ¦           ¦   Libba.HubTo.Arcavis.Infrastructure.Redis.AssemblyInfo.cs
+¦   ¦       ¦           ¦   Libba.HubTo.Arcavis.Infrastructure.Redis.AssemblyInfoInputs.cache
+¦   ¦       ¦           ¦   Libba.HubTo.Arcavis.Infrastructure.Redis.assets.cache
+¦   ¦       ¦           ¦   Libba.HubTo.Arcavis.Infrastructure.Redis.csproj.AssemblyReference.cache
+¦   ¦       ¦           ¦   Libba.HubTo.Arcavis.Infrastructure.Redis.csproj.BuildWithSkipAnalyzers
+¦   ¦       ¦           ¦   Libba.HubTo.Arcavis.Infrastructure.Redis.csproj.CoreCompileInputs.cache
+¦   ¦       ¦           ¦   Libba.HubTo.Arcavis.Infrastructure.Redis.csproj.FileListAbsolute.txt
+¦   ¦       ¦           ¦   Libba.HubTo.Arcavis.Infrastructure.Redis.dll
+¦   ¦       ¦           ¦   Libba.HubTo.Arcavis.Infrastructure.Redis.GeneratedMSBuildEditorConfig.editorconfig
+¦   ¦       ¦           ¦   Libba.HubTo.Arcavis.Infrastructure.Redis.GlobalUsings.g.cs
+¦   ¦       ¦           ¦   Libba.HubTo.Arcavis.Infrastructure.Redis.pdb
+¦   ¦       ¦           ¦   Libba.HubTo.Arcavis.Infrastructure.Redis.sourcelink.json
+¦   ¦       ¦           ¦   
+¦   ¦       ¦           +---ref
+¦   ¦       ¦           ¦       Libba.HubTo.Arcavis.Infrastructure.Redis.dll
+¦   ¦       ¦           ¦       
+¦   ¦       ¦           +---refint
+¦   ¦       ¦                   Libba.HubTo.Arcavis.Infrastructure.Redis.dll
+¦   ¦       ¦                   
+¦   ¦       +---Service
+¦   ¦               RedisCacheService.cs
+¦   ¦               
+¦   +---WebApi
+¦       +---Libba.HubTo.Arcavis.WebApi
+¦           ¦   appsettings.Development.json
+¦           ¦   appsettings.json
+¦           ¦   Dockerfile
+¦           ¦   Libba.HubTo.Arcavis.WebApi.csproj
+¦           ¦   Libba.HubTo.Arcavis.WebApi.csproj.user
+¦           ¦   Libba.HubTo.Arcavis.WebApi.http
+¦           ¦   Program.cs
+¦           ¦   
+¦           +---ActionFilters
+¦           ¦       ValidateModelActionFilter.cs
+¦           ¦       
+¦           +---bin
+¦           ¦   +---Debug
+¦           ¦       +---net10.0
+¦           ¦               appsettings.Development.json
+¦           ¦               appsettings.json
+¦           ¦               AutoMapper.dll
+¦           ¦               FluentValidation.DependencyInjectionExtensions.dll
+¦           ¦               FluentValidation.dll
+¦           ¦               Konscious.Security.Cryptography.Argon2.dll
+¦           ¦               Konscious.Security.Cryptography.Blake2.dll
+¦           ¦               Libba.HubTo.Arcavis.Application.dll
+¦           ¦               Libba.HubTo.Arcavis.Application.pdb
+¦           ¦               Libba.HubTo.Arcavis.Common.dll
+¦           ¦               Libba.HubTo.Arcavis.Common.pdb
+¦           ¦               Libba.HubTo.Arcavis.Domain.dll
+¦           ¦               Libba.HubTo.Arcavis.Domain.pdb
+¦           ¦               Libba.HubTo.Arcavis.Infrastructure.Persistence.dll
+¦           ¦               Libba.HubTo.Arcavis.Infrastructure.Persistence.pdb
+¦           ¦               Libba.HubTo.Arcavis.Infrastructure.Redis.dll
+¦           ¦               Libba.HubTo.Arcavis.Infrastructure.Redis.pdb
+¦           ¦               Libba.HubTo.Arcavis.WebApi.deps.json
+¦           ¦               Libba.HubTo.Arcavis.WebApi.dll
+¦           ¦               Libba.HubTo.Arcavis.WebApi.exe
+¦           ¦               Libba.HubTo.Arcavis.WebApi.pdb
+¦           ¦               Libba.HubTo.Arcavis.WebApi.runtimeconfig.json
+¦           ¦               Libba.HubTo.Arcavis.WebApi.staticwebassets.endpoints.json
+¦           ¦               MediatR.Contracts.dll
+¦           ¦               MediatR.dll
+¦           ¦               Microsoft.AspNetCore.OpenApi.dll
+¦           ¦               Microsoft.EntityFrameworkCore.Abstractions.dll
+¦           ¦               Microsoft.EntityFrameworkCore.dll
+¦           ¦               Microsoft.EntityFrameworkCore.Relational.dll
+¦           ¦               Microsoft.Extensions.DependencyModel.dll
+¦           ¦               Microsoft.IdentityModel.Abstractions.dll
+¦           ¦               Microsoft.IdentityModel.JsonWebTokens.dll
+¦           ¦               Microsoft.IdentityModel.Logging.dll
+¦           ¦               Microsoft.IdentityModel.Tokens.dll
+¦           ¦               Microsoft.OpenApi.dll
+¦           ¦               Newtonsoft.Json.dll
+¦           ¦               Npgsql.dll
+¦           ¦               Npgsql.EntityFrameworkCore.PostgreSQL.dll
+¦           ¦               Pipelines.Sockets.Unofficial.dll
+¦           ¦               Scrutor.dll
+¦           ¦               StackExchange.Redis.dll
+¦           ¦               
+¦           +---Controllers
+¦           ¦       EndpointController.cs
+¦           ¦       RoleController.cs
+¦           ¦       RoleEndpointController.cs
+¦           ¦       TokenController.cs
+¦           ¦       UserController.cs
+¦           ¦       UserRoleController.cs
+¦           ¦       
+¦           +---Middlewares
+¦           ¦       GlobalExceptionHandlingMiddleware.cs
+¦           ¦       RequestContextMiddleware.cs
+¦           ¦       
+¦           +---obj
+¦           ¦   ¦   Libba.HubTo.Arcavis.WebApi.csproj.nuget.dgspec.json
+¦           ¦   ¦   Libba.HubTo.Arcavis.WebApi.csproj.nuget.g.props
+¦           ¦   ¦   Libba.HubTo.Arcavis.WebApi.csproj.nuget.g.targets
+¦           ¦   ¦   project.assets.json
+¦           ¦   ¦   project.nuget.cache
+¦           ¦   ¦   
+¦           ¦   +---Debug
+¦           ¦       +---net10.0
+¦           ¦           ¦   .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
+¦           ¦           ¦   ApiEndpoints.json
+¦           ¦           ¦   apphost.exe
+¦           ¦           ¦   Libba.Hu.9822099A.Up2Date
+¦           ¦           ¦   Libba.HubTo.Arcavis.WebApi.AssemblyInfo.cs
+¦           ¦           ¦   Libba.HubTo.Arcavis.WebApi.AssemblyInfoInputs.cache
+¦           ¦           ¦   Libba.HubTo.Arcavis.WebApi.assets.cache
+¦           ¦           ¦   Libba.HubTo.Arcavis.WebApi.csproj.AssemblyReference.cache
+¦           ¦           ¦   Libba.HubTo.Arcavis.WebApi.csproj.BuildWithSkipAnalyzers
+¦           ¦           ¦   Libba.HubTo.Arcavis.WebApi.csproj.CoreCompileInputs.cache
+¦           ¦           ¦   Libba.HubTo.Arcavis.WebApi.csproj.FileListAbsolute.txt
+¦           ¦           ¦   Libba.HubTo.Arcavis.WebApi.dll
+¦           ¦           ¦   Libba.HubTo.Arcavis.WebApi.GeneratedMSBuildEditorConfig.editorconfig
+¦           ¦           ¦   Libba.HubTo.Arcavis.WebApi.genruntimeconfig.cache
+¦           ¦           ¦   Libba.HubTo.Arcavis.WebApi.GlobalUsings.g.cs
+¦           ¦           ¦   Libba.HubTo.Arcavis.WebApi.MvcApplicationPartsAssemblyInfo.cache
+¦           ¦           ¦   Libba.HubTo.Arcavis.WebApi.MvcApplicationPartsAssemblyInfo.cs
+¦           ¦           ¦   Libba.HubTo.Arcavis.WebApi.pdb
+¦           ¦           ¦   Libba.HubTo.Arcavis.WebApi.sourcelink.json
+¦           ¦           ¦   rjsmcshtml.dswa.cache.json
+¦           ¦           ¦   rjsmrazor.dswa.cache.json
+¦           ¦           ¦   rpswa.dswa.cache.json
+¦           ¦           ¦   staticwebassets.build.endpoints.json
+¦           ¦           ¦   staticwebassets.build.json
+¦           ¦           ¦   staticwebassets.build.json.cache
+¦           ¦           ¦   staticwebassets.references.upToDateCheck.txt
+¦           ¦           ¦   staticwebassets.removed.txt
+¦           ¦           ¦   swae.build.ex.cache
+¦           ¦           ¦   
+¦           ¦           +---EndpointInfo
+¦           ¦           ¦       Libba.HubTo.Arcavis.WebApi.json
+¦           ¦           ¦       Libba.HubTo.Arcavis.WebApi.OpenApiFiles.cache
+¦           ¦           ¦       
+¦           ¦           +---ref
+¦           ¦           ¦       Libba.HubTo.Arcavis.WebApi.dll
+¦           ¦           ¦       
+¦           ¦           +---refint
+¦           ¦           ¦       Libba.HubTo.Arcavis.WebApi.dll
+¦           ¦           ¦       
+¦           ¦           +---staticwebassets
+¦           +---Properties
+¦                   launchSettings.json
+¦                   
++---TestResults
++---tests
+    +---Application
+        +---Libba.HubTo.Arcavis.Application.UnitTests
+            ¦   Libba.HubTo.Arcavis.Application.UnitTests.csproj
+            ¦   xunit.runner.json
+            ¦   
+            +---bin
+            ¦   +---Debug
+            ¦       +---net10.0
+            ¦           ¦   .msCoverageSourceRootsMapping_Libba.HubTo.Arcavis.Application.UnitTests
+            ¦           ¦   AutoMapper.dll
+            ¦           ¦   Castle.Core.dll
+            ¦           ¦   FluentAssertions.dll
+            ¦           ¦   FluentValidation.DependencyInjectionExtensions.dll
+            ¦           ¦   FluentValidation.dll
+            ¦           ¦   Konscious.Security.Cryptography.Argon2.dll
+            ¦           ¦   Konscious.Security.Cryptography.Blake2.dll
+            ¦           ¦   Libba.HubTo.Arcavis.Application.dll
+            ¦           ¦   Libba.HubTo.Arcavis.Application.pdb
+            ¦           ¦   Libba.HubTo.Arcavis.Application.UnitTests.deps.json
+            ¦           ¦   Libba.HubTo.Arcavis.Application.UnitTests.dll
+            ¦           ¦   Libba.HubTo.Arcavis.Application.UnitTests.exe
+            ¦           ¦   Libba.HubTo.Arcavis.Application.UnitTests.pdb
+            ¦           ¦   Libba.HubTo.Arcavis.Application.UnitTests.runtimeconfig.json
+            ¦           ¦   Libba.HubTo.Arcavis.Common.dll
+            ¦           ¦   Libba.HubTo.Arcavis.Common.pdb
+            ¦           ¦   Libba.HubTo.Arcavis.Domain.dll
+            ¦           ¦   Libba.HubTo.Arcavis.Domain.pdb
+            ¦           ¦   MediatR.Contracts.dll
+            ¦           ¦   MediatR.dll
+            ¦           ¦   Microsoft.Bcl.AsyncInterfaces.dll
+            ¦           ¦   Microsoft.Extensions.DependencyInjection.Abstractions.dll
+            ¦           ¦   Microsoft.Extensions.DependencyInjection.dll
+            ¦           ¦   Microsoft.Extensions.Logging.Abstractions.dll
+            ¦           ¦   Microsoft.Extensions.Logging.dll
+            ¦           ¦   Microsoft.Extensions.Options.dll
+            ¦           ¦   Microsoft.Extensions.Primitives.dll
+            ¦           ¦   Microsoft.IdentityModel.Abstractions.dll
+            ¦           ¦   Microsoft.IdentityModel.JsonWebTokens.dll
+            ¦           ¦   Microsoft.IdentityModel.Logging.dll
+            ¦           ¦   Microsoft.IdentityModel.Tokens.dll
+            ¦           ¦   Microsoft.Testing.Extensions.MSBuild.dll
+            ¦           ¦   Microsoft.Testing.Extensions.TrxReport.Abstractions.dll
+            ¦           ¦   Microsoft.Testing.Platform.dll
+            ¦           ¦   Microsoft.TestPlatform.CommunicationUtilities.dll
+            ¦           ¦   Microsoft.TestPlatform.CoreUtilities.dll
+            ¦           ¦   Microsoft.TestPlatform.CrossPlatEngine.dll
+            ¦           ¦   Microsoft.TestPlatform.PlatformAbstractions.dll
+            ¦           ¦   Microsoft.TestPlatform.Utilities.dll
+            ¦           ¦   Microsoft.VisualStudio.CodeCoverage.Shim.dll
+            ¦           ¦   Microsoft.VisualStudio.TestPlatform.Common.dll
+            ¦           ¦   Microsoft.VisualStudio.TestPlatform.ObjectModel.dll
+            ¦           ¦   Mono.Cecil.dll
+            ¦           ¦   Mono.Cecil.Rocks.dll
+            ¦           ¦   Newtonsoft.Json.dll
+            ¦           ¦   NSubstitute.dll
+            ¦           ¦   System.Diagnostics.EventLog.dll
+            ¦           ¦   testhost.dll
+            ¦           ¦   testhost.exe
+            ¦           ¦   xunit.abstractions.dll
+            ¦           ¦   xunit.runner.json
+            ¦           ¦   xunit.runner.visualstudio.testadapter.dll
+            ¦           ¦   xunit.v3.assert.dll
+            ¦           ¦   xunit.v3.common.dll
+            ¦           ¦   xunit.v3.core.dll
+            ¦           ¦   xunit.v3.runner.common.dll
+            ¦           ¦   xunit.v3.runner.inproc.console.dll
+            ¦           ¦   xunit.v3.runner.utility.netcore.dll
+            ¦           ¦   
+            ¦           +---cs
+            ¦           ¦       Microsoft.Testing.Extensions.MSBuild.resources.dll
+            ¦           ¦       Microsoft.Testing.Platform.resources.dll
+            ¦           ¦       Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+            ¦           ¦       Microsoft.TestPlatform.CoreUtilities.resources.dll
+            ¦           ¦       Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+            ¦           ¦       Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+            ¦           ¦       Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+            ¦           ¦       
+            ¦           +---de
+            ¦           ¦       Microsoft.Testing.Extensions.MSBuild.resources.dll
+            ¦           ¦       Microsoft.Testing.Platform.resources.dll
+            ¦           ¦       Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+            ¦           ¦       Microsoft.TestPlatform.CoreUtilities.resources.dll
+            ¦           ¦       Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+            ¦           ¦       Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+            ¦           ¦       Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+            ¦           ¦       
+            ¦           +---es
+            ¦           ¦       Microsoft.Testing.Extensions.MSBuild.resources.dll
+            ¦           ¦       Microsoft.Testing.Platform.resources.dll
+            ¦           ¦       Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+            ¦           ¦       Microsoft.TestPlatform.CoreUtilities.resources.dll
+            ¦           ¦       Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+            ¦           ¦       Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+            ¦           ¦       Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+            ¦           ¦       
+            ¦           +---fr
+            ¦           ¦       Microsoft.Testing.Extensions.MSBuild.resources.dll
+            ¦           ¦       Microsoft.Testing.Platform.resources.dll
+            ¦           ¦       Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+            ¦           ¦       Microsoft.TestPlatform.CoreUtilities.resources.dll
+            ¦           ¦       Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+            ¦           ¦       Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+            ¦           ¦       Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+            ¦           ¦       
+            ¦           +---it
+            ¦           ¦       Microsoft.Testing.Extensions.MSBuild.resources.dll
+            ¦           ¦       Microsoft.Testing.Platform.resources.dll
+            ¦           ¦       Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+            ¦           ¦       Microsoft.TestPlatform.CoreUtilities.resources.dll
+            ¦           ¦       Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+            ¦           ¦       Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+            ¦           ¦       Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+            ¦           ¦       
+            ¦           +---ja
+            ¦           ¦       Microsoft.Testing.Extensions.MSBuild.resources.dll
+            ¦           ¦       Microsoft.Testing.Platform.resources.dll
+            ¦           ¦       Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+            ¦           ¦       Microsoft.TestPlatform.CoreUtilities.resources.dll
+            ¦           ¦       Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+            ¦           ¦       Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+            ¦           ¦       Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+            ¦           ¦       
+            ¦           +---ko
+            ¦           ¦       Microsoft.Testing.Extensions.MSBuild.resources.dll
+            ¦           ¦       Microsoft.Testing.Platform.resources.dll
+            ¦           ¦       Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+            ¦           ¦       Microsoft.TestPlatform.CoreUtilities.resources.dll
+            ¦           ¦       Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+            ¦           ¦       Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+            ¦           ¦       Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+            ¦           ¦       
+            ¦           +---Log
+            ¦           ¦       log_250925171402520.diag
+            ¦           ¦       log_250925171425660.diag
+            ¦           ¦       log_250925172436203.diag
+            ¦           ¦       log_250925172437997.diag
+            ¦           ¦       log_250925174818983.diag
+            ¦           ¦       log_250925174821996.diag
+            ¦           ¦       log_250925175008543.diag
+            ¦           ¦       log_250925175150481.diag
+            ¦           ¦       log_250925175152869.diag
+            ¦           ¦       log_250925175630471.diag
+            ¦           ¦       log_250925175751830.diag
+            ¦           ¦       log_250925180011994.diag
+            ¦           ¦       log_250925180012971.diag
+            ¦           ¦       log_250926072916539.diag
+            ¦           ¦       log_250926073150313.diag
+            ¦           ¦       log_250926075247313.diag
+            ¦           ¦       log_250926080213279.diag
+            ¦           ¦       log_250926080213765.diag
+            ¦           ¦       log_250926080311697.diag
+            ¦           ¦       log_250926080312481.diag
+            ¦           ¦       log_250926080620442.diag
+            ¦           ¦       log_250926080620910.diag
+            ¦           ¦       log_250926081949035.diag
+            ¦           ¦       log_250926081949587.diag
+            ¦           ¦       log_250926082524664.diag
+            ¦           ¦       log_250926082525254.diag
+            ¦           ¦       log_250926082617989.diag
+            ¦           ¦       log_250926082619499.diag
+            ¦           ¦       log_250926083230944.diag
+            ¦           ¦       log_250926083232151.diag
+            ¦           ¦       log_250926083246444.diag
+            ¦           ¦       log_250926083305091.diag
+            ¦           ¦       log_250926083312349.diag
+            ¦           ¦       log_250926125716575.diag
+            ¦           ¦       log_250926125717453.diag
+            ¦           ¦       log_250926125736950.diag
+            ¦           ¦       log_250926125747808.diag
+            ¦           ¦       log_250926125941927.diag
+            ¦           ¦       log_250926125942723.diag
+            ¦           ¦       log_250926130246099.diag
+            ¦           ¦       log_250926130246782.diag
+            ¦           ¦       log_250926130916722.diag
+            ¦           ¦       log_250926131123198.diag
+            ¦           ¦       log_250926131153499.diag
+            ¦           ¦       log_250926132539231.diag
+            ¦           ¦       log_250926132540061.diag
+            ¦           ¦       log_250926132556703.diag
+            ¦           ¦       log_250926132647052.diag
+            ¦           ¦       log_250926145413628.diag
+            ¦           ¦       log_250926145415601.diag
+            ¦           ¦       log_250926150008151.diag
+            ¦           ¦       log_250926150009921.diag
+            ¦           ¦       log_250926150408520.diag
+            ¦           ¦       log_250926150727464.diag
+            ¦           ¦       log_250926150755290.diag
+            ¦           ¦       log_250926151204429.diag
+            ¦           ¦       log_250926151206676.diag
+            ¦           ¦       log_250926151413985.diag
+            ¦           ¦       log_250926151415372.diag
+            ¦           ¦       log_250926151829281.diag
+            ¦           ¦       log_250926151831686.diag
+            ¦           ¦       log_250926152325844.diag
+            ¦           ¦       log_250926152327290.diag
+            ¦           ¦       log_250926164427515.diag
+            ¦           ¦       log_250926164428515.diag
+            ¦           ¦       log_250926170023799.diag
+            ¦           ¦       log_250926170024639.diag
+            ¦           ¦       log_250926170206577.diag
+            ¦           ¦       log_250926170411037.diag
+            ¦           ¦       log_250926170412040.diag
+            ¦           ¦       log_250926170749208.diag
+            ¦           ¦       log_250926170752279.diag
+            ¦           ¦       
+            ¦           +---pl
+            ¦           ¦       Microsoft.Testing.Extensions.MSBuild.resources.dll
+            ¦           ¦       Microsoft.Testing.Platform.resources.dll
+            ¦           ¦       Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+            ¦           ¦       Microsoft.TestPlatform.CoreUtilities.resources.dll
+            ¦           ¦       Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+            ¦           ¦       Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+            ¦           ¦       Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+            ¦           ¦       
+            ¦           +---pt-BR
+            ¦           ¦       Microsoft.Testing.Extensions.MSBuild.resources.dll
+            ¦           ¦       Microsoft.Testing.Platform.resources.dll
+            ¦           ¦       Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+            ¦           ¦       Microsoft.TestPlatform.CoreUtilities.resources.dll
+            ¦           ¦       Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+            ¦           ¦       Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+            ¦           ¦       Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+            ¦           ¦       
+            ¦           +---ru
+            ¦           ¦       Microsoft.Testing.Extensions.MSBuild.resources.dll
+            ¦           ¦       Microsoft.Testing.Platform.resources.dll
+            ¦           ¦       Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+            ¦           ¦       Microsoft.TestPlatform.CoreUtilities.resources.dll
+            ¦           ¦       Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+            ¦           ¦       Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+            ¦           ¦       Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+            ¦           ¦       
+            ¦           +---runtimes
+            ¦           ¦   +---win
+            ¦           ¦       +---lib
+            ¦           ¦           +---net6.0
+            ¦           ¦                   System.Diagnostics.EventLog.dll
+            ¦           ¦                   System.Diagnostics.EventLog.Messages.dll
+            ¦           ¦                   
+            ¦           +---tr
+            ¦           ¦       Microsoft.Testing.Extensions.MSBuild.resources.dll
+            ¦           ¦       Microsoft.Testing.Platform.resources.dll
+            ¦           ¦       Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+            ¦           ¦       Microsoft.TestPlatform.CoreUtilities.resources.dll
+            ¦           ¦       Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+            ¦           ¦       Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+            ¦           ¦       Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+            ¦           ¦       
+            ¦           +---zh-Hans
+            ¦           ¦       Microsoft.Testing.Extensions.MSBuild.resources.dll
+            ¦           ¦       Microsoft.Testing.Platform.resources.dll
+            ¦           ¦       Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+            ¦           ¦       Microsoft.TestPlatform.CoreUtilities.resources.dll
+            ¦           ¦       Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+            ¦           ¦       Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+            ¦           ¦       Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+            ¦           ¦       
+            ¦           +---zh-Hant
+            ¦                   Microsoft.Testing.Extensions.MSBuild.resources.dll
+            ¦                   Microsoft.Testing.Platform.resources.dll
+            ¦                   Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+            ¦                   Microsoft.TestPlatform.CoreUtilities.resources.dll
+            ¦                   Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+            ¦                   Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+            ¦                   Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+            ¦                   
+            +---Features
+            ¦   +---Endpoint
+            ¦   ¦   +---CreateEndpoint
+            ¦   ¦   ¦       CreateEndpointCommandHandlerTests.cs
+            ¦   ¦   ¦       CreateEndpointCommandValidatorTests.cs
+            ¦   ¦   ¦       
+            ¦   ¦   +---DeleteEndpoint
+            ¦   ¦   ¦       DeleteEndpointCommandHandlerTests.cs
+            ¦   ¦   ¦       
+            ¦   ¦   +---GetAllEndpoint
+            ¦   ¦   ¦       GetAllEndpointsQueryHandlerTests.cs
+            ¦   ¦   ¦       
+            ¦   ¦   +---GetEndpointById
+            ¦   ¦   ¦       GetEndpointByIdQueryHandlers.cs
+            ¦   ¦   ¦       
+            ¦   ¦   +---UpdateEndpoint
+            ¦   ¦           UpdateEndpointCommandHandlerTest.cs
+            ¦   ¦           UpdateEndpointCommandValidatorTests.cs
+            ¦   ¦           
+            ¦   +---Role
+            ¦   ¦   +---CreateRole
+            ¦   ¦   ¦       CreateRoleCommandHandlerTest.cs
+            ¦   ¦   ¦       CreateRoleCommandValidatorTests.cs
+            ¦   ¦   ¦       
+            ¦   ¦   +---DeleteRole
+            ¦   ¦   ¦       DeleteRoleCommandHandlerTests.cs
+            ¦   ¦   ¦       
+            ¦   ¦   +---GetAllRole
+            ¦   ¦   ¦       GetAllEndpointsQueryHandlerTests.cs
+            ¦   ¦   ¦       
+            ¦   ¦   +---GetRoleById
+            ¦   ¦   ¦       GetEndpointByIdQueryHandlers.cs
+            ¦   ¦   ¦       
+            ¦   ¦   +---UpdateRole
+            ¦   ¦           UpdateEndpointCommandHandlerTest.cs
+            ¦   ¦           UpdateEndpointCommandValidatorTests.cs
+            ¦   ¦           
+            ¦   +---RoleEndpoint
+            ¦       +---CreateRoleEndpoint
+            ¦               CreateRoleEndpointCommandHandlerTests.cs
+            ¦               CreateRoleEndpointCommandValidatorTests.cs
+            ¦               
+            +---obj
+                ¦   Libba.HubTo.Arcavis.Application.UnitTests.csproj.nuget.dgspec.json
+                ¦   Libba.HubTo.Arcavis.Application.UnitTests.csproj.nuget.g.props
+                ¦   Libba.HubTo.Arcavis.Application.UnitTests.csproj.nuget.g.targets
+                ¦   project.assets.json
+                ¦   project.nuget.cache
+                ¦   
+                +---Debug
+                    +---net10.0
+                        ¦   .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
+                        ¦   apphost.exe
+                        ¦   Libba.Hu.69ADDAB7.Up2Date
+                        ¦   Libba.HubTo.Arcavis.Application.UnitTests.AssemblyInfo.cs
+                        ¦   Libba.HubTo.Arcavis.Application.UnitTests.AssemblyInfoInputs.cache
+                        ¦   Libba.HubTo.Arcavis.Application.UnitTests.assets.cache
+                        ¦   Libba.HubTo.Arcavis.Application.UnitTests.csproj.AssemblyReference.cache
+                        ¦   Libba.HubTo.Arcavis.Application.UnitTests.csproj.BuildWithSkipAnalyzers
+                        ¦   Libba.HubTo.Arcavis.Application.UnitTests.csproj.CoreCompileInputs.cache
+                        ¦   Libba.HubTo.Arcavis.Application.UnitTests.csproj.FileListAbsolute.txt
+                        ¦   Libba.HubTo.Arcavis.Application.UnitTests.dll
+                        ¦   Libba.HubTo.Arcavis.Application.UnitTests.genautoregisteredextensionsinputcache.cache
+                        ¦   Libba.HubTo.Arcavis.Application.UnitTests.GeneratedMSBuildEditorConfig.editorconfig
+                        ¦   Libba.HubTo.Arcavis.Application.UnitTests.genruntimeconfig.cache
+                        ¦   Libba.HubTo.Arcavis.Application.UnitTests.gentestingplatformentrypointinputcache.cache
+                        ¦   Libba.HubTo.Arcavis.Application.UnitTests.GlobalUsings.g.cs
+                        ¦   Libba.HubTo.Arcavis.Application.UnitTests.pdb
+                        ¦   Libba.HubTo.Arcavis.Application.UnitTests.sourcelink.json
+                        ¦   Libba.HubTo.Arcavis.Application.UnitTests.xUnit.v3.EntryPoint.cache
+                        ¦   SelfRegisteredExtensions.cs
+                        ¦   XunitAutoGeneratedEntryPoint.cs
+                        ¦   
+                        +---ref
+                        ¦       Libba.HubTo.Arcavis.Application.UnitTests.dll
+                        ¦       
+                        +---refint
+                                Libba.HubTo.Arcavis.Application.UnitTests.dll
+                                
