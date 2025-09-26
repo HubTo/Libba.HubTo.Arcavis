@@ -30,7 +30,7 @@ public class CreateEndpointCommandHandlerTests
     [Fact]
     public async Task Handle_WhenCalledWithValidCommand_ShouldCreateAndSaveEndpointAndReturnId()
     {
-        var command = new CreateEndpointCommand("TestModule", "TestController", "TestAction", HttpVerb.GET, "Test.NameSpae");
+        var command = new CreateEndpointCommand("TestModule", "TestController", "TestAction", HttpVerb.GET, "Test.Namespace");
         var expectedId = Guid.NewGuid();
         var mappedEntity = new EndpointEntity { Id = expectedId };
 
@@ -48,7 +48,7 @@ public class CreateEndpointCommandHandlerTests
     [Fact]
     public async Task Handle_WhenRepositoryThrowsException_ShouldThrowException()
     {
-        var command = new CreateEndpointCommand("TestModule", "TestController", "TestAction", HttpVerb.GET, "Test.NameSpae");
+        var command = new CreateEndpointCommand("TestModule", "TestController", "TestAction", HttpVerb.GET, "Test.Namespace");
         var mappedEntity = new EndpointEntity { Id = Guid.NewGuid() };
         var expectedException = new InvalidOperationException("Database connection failed");
 

@@ -10,17 +10,14 @@ public class DeleteRoleCommandHandler : ICommandHandler<DeleteRoleCommand, bool>
     #region Dependencies
     private readonly ILogger<DeleteRoleCommandHandler> _logger;
     private readonly IRoleRepository _roleRepository;
-    private readonly IArcavisMapper _mapper;
 
 
     public DeleteRoleCommandHandler(
         ILogger<DeleteRoleCommandHandler> logger,
-        IRoleRepository roleRepository,
-        IArcavisMapper mapper)
+        IRoleRepository roleRepository)
     {
         _logger = logger;
         _roleRepository = roleRepository;
-        _mapper = mapper;
     }
     #endregion
 
