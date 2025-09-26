@@ -10,6 +10,7 @@ namespace Libba.HubTo.Arcavis.Application.UnitTests.Features.Endpoint.UpdateEndp
 
 public class UpdateEndpointCommandHandlerTest
 {
+    #region Mock Dependencies
     private readonly IEndpointRepository _endpointRepositoryMock;
     private readonly IArcavisMapper _mapperMock;
     private readonly ILogger<UpdateEndpointCommandHandler> _loggerMock;
@@ -22,6 +23,7 @@ public class UpdateEndpointCommandHandlerTest
         _mapperMock = Substitute.For<IArcavisMapper>();
         _sut = new UpdateEndpointCommandHandler(_loggerMock, _endpointRepositoryMock, _mapperMock);
     }
+    #endregion
 
     [Fact]
     public async Task Handle_WhenEndpointExist_ShouldUpdateAndReturnId()

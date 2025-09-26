@@ -9,6 +9,7 @@ namespace Libba.HubTo.Arcavis.Application.UnitTests.Features.Endpoint.DeleteEndp
 
 public class DeleteEndpointCommandHandlerTests
 {
+    #region Mock Dependencies
     private readonly IEndpointRepository _endpointRepositoryMock;
     private readonly ILogger<DeleteEndpointCommandHandler> _loggerMock;
     private readonly DeleteEndpointCommandHandler _sut;
@@ -19,6 +20,7 @@ public class DeleteEndpointCommandHandlerTests
         _loggerMock = Substitute.For<ILogger<DeleteEndpointCommandHandler>>();
         _sut = new DeleteEndpointCommandHandler(_loggerMock, _endpointRepositoryMock);
     }
+    #endregion
 
     [Fact]
     public async Task Handle_WhenEndpointExist_ShouldDeleteAndSaveChanges()
