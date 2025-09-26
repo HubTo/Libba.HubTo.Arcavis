@@ -12,6 +12,7 @@ namespace Libba.HubTo.Arcavis.Application.UnitTests.Features.Endpoint.CreateEndp
 
 public class CreateEndpointCommandHandlerTests
 {
+    #region Mock Dependencies
     private readonly IEndpointRepository _endpointRepositoryMock;
     private readonly IArcavisMapper _mapperMock;
     private readonly ILogger<CreateEndpointCommandHandler> _loggerMock;
@@ -24,6 +25,7 @@ public class CreateEndpointCommandHandlerTests
         _loggerMock = Substitute.For<ILogger<CreateEndpointCommandHandler>>();
         _sut = new CreateEndpointCommandHandler(_loggerMock, _endpointRepositoryMock, _mapperMock);
     }
+    #endregion
 
     [Fact]
     public async Task Handle_WhenCalledWithValidCommand_ShouldCreateAndSaveEndpointAndReturnId()
