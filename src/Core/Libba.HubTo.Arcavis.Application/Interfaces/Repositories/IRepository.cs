@@ -91,9 +91,4 @@ public interface IRepository<T> where T : BaseEntity
     /// <param name="entity">The entity to delete.</param>
     void Delete(T entity);
 
-    /// <summary>
-    /// Persists all changes made in the repository to the database.
-    /// </summary>
-    /// <returns>A task representing the asynchronous operation.</returns>
-    Task SaveAsync(CancellationToken cancellationToken = default);
 }

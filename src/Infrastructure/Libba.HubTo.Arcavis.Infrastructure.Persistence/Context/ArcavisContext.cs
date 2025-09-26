@@ -1,12 +1,19 @@
-﻿using Libba.HubTo.Arcavis.Domain.Entities;
+﻿using Libba.HubTo.Arcavis.Application.Interfaces;
+using Libba.HubTo.Arcavis.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Libba.HubTo.Arcavis.Infrastructure.Persistence.Context;
 
 public class ArcavisContext : DbContext
 {
-    public ArcavisContext(DbContextOptions<ArcavisContext> options) : base(options)
-    { }
+    private readonly IRequestContext _requestContext;
+
+    public ArcavisContext(
+        DbContextOptions<ArcavisContext> options, 
+        IRequestContext requestContext) : base(options)
+    {
+        _requestContext = requestContext;
+    }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -25,5 +32,26 @@ public class ArcavisContext : DbContext
             modelBuilder.Entity(entityType);
         }
     }
+
+    public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+    {
+        foreach (var entry in ChangeTracker.Entries<BaseEntity>())
+        {
+            switch (entry.State)
+            {
+                case EntityState.Added:
+                    entry.Entity.CreatedBy = _requestContext.UserId;
+                    entry.Entity.CreatedAt = DateTime.UtcNow;
+                    break;
+                case EntityState.Modified:
+                    entry.Entity.UpdatedBy = _requestContext.UserId;
+                    entry.Entity.UpdatedAt = DateTime.UtcNow;
+                    break;
+            }
+        }
+
+        return base.SaveChangesAsync(cancellationToken);
+    }
+
 }
 

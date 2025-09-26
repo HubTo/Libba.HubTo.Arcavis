@@ -2,7 +2,6 @@
 using Libba.HubTo.Arcavis.Application.Interfaces.Repositories.Endpoint;
 using Libba.HubTo.Arcavis.Application.Interfaces;
 using Libba.HubTo.Arcavis.Domain.Entities;
-using Microsoft.Extensions.Logging;
 using FluentAssertions;
 using NSubstitute;
 
@@ -13,15 +12,13 @@ public class UpdateEndpointCommandHandlerTest
     #region Mock Dependencies
     private readonly IEndpointRepository _endpointRepositoryMock;
     private readonly IArcavisMapper _mapperMock;
-    private readonly ILogger<UpdateEndpointCommandHandler> _loggerMock;
     private readonly UpdateEndpointCommandHandler _sut;
 
     public UpdateEndpointCommandHandlerTest()
     {
         _endpointRepositoryMock = Substitute.For<IEndpointRepository>();
-        _loggerMock = Substitute.For<ILogger<UpdateEndpointCommandHandler>>();
         _mapperMock = Substitute.For<IArcavisMapper>();
-        _sut = new UpdateEndpointCommandHandler(_loggerMock, _endpointRepositoryMock, _mapperMock);
+        _sut = new UpdateEndpointCommandHandler(_endpointRepositoryMock, _mapperMock);
     }
     #endregion
 
@@ -40,8 +37,6 @@ public class UpdateEndpointCommandHandlerTest
 
         _mapperMock.Received(1).Map(command, existingEntity);
         _endpointRepositoryMock.Received(1).Update(existingEntity);
-
-        await _endpointRepositoryMock.Received(1).SaveAsync();
 
         Assert.Equal(existingId, resultId);
     }
@@ -63,7 +58,5 @@ public class UpdateEndpointCommandHandlerTest
 
         _mapperMock.DidNotReceive().Map(Arg.Any<UpdateEndpointCommand>(), Arg.Any<EndpointEntity>());
         _endpointRepositoryMock.DidNotReceive().Update(Arg.Any<EndpointEntity>());
-
-        await _endpointRepositoryMock.DidNotReceive().SaveAsync(Arg.Any<CancellationToken>());
     }
 }

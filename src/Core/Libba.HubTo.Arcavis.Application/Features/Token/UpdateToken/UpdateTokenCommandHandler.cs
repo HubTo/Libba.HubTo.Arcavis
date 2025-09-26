@@ -1,24 +1,19 @@
 ﻿using Libba.HubTo.Arcavis.Application.Interfaces.Repositories.Token;
 using Libba.HubTo.Arcavis.Application.Interfaces;
 using Libba.HubTo.Arcavis.Application.CQRS;
-using Microsoft.Extensions.Logging;
 
 namespace Libba.HubTo.Arcavis.Application.Features.Token.UpdateToken;
 
 public class UpdateTokenCommandHandler : ICommandHandler<UpdateTokenCommand, Guid>
 {
     #region Dependencies
-    private readonly ILogger<UpdateTokenCommandHandler> _logger;
     private readonly ITokenRepository _tokenRepository;
     private readonly IArcavisMapper _mapper;
 
-
     public UpdateTokenCommandHandler(
-        ILogger<UpdateTokenCommandHandler> logger,
         ITokenRepository tokenRepository,
         IArcavisMapper mapper)
     {
-        _logger = logger;
         _tokenRepository = tokenRepository;
         _mapper = mapper;
     }
@@ -26,33 +21,15 @@ public class UpdateTokenCommandHandler : ICommandHandler<UpdateTokenCommand, Gui
 
     public async Task<Guid> Handle(UpdateTokenCommand request, CancellationToken cancellationToken)
     {
-        _logger.LogInformation("Handling {CommandName}: Updating Token with User ID: {UserId}:",
-            nameof(UpdateTokenCommand),
-            request.UserId);
+        var dal = await _tokenRepository.GetByIdAsync(request.Id, cancellationToken);
 
-        try
-        {
-            var dal = await _tokenRepository.GetByIdAsync(request.Id, cancellationToken);
+        if (dal is null)
+            throw new Exception($"Token with Id {request.Id} was not found.");
 
-            if (dal is null)
-            {
-                throw new Exception($"Token with Id {request.Id} was not found.");
-            }
+        _mapper.Map(request, dal);
 
-            _mapper.Map(request, dal);
+        _tokenRepository.Update(dal);
 
-            _tokenRepository.Update(dal);
-            await _tokenRepository.SaveAsync(cancellationToken);
-
-            return dal.Id;
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex, "An error occurred while handling {CommandName} for User ID: {UserId}",
-                nameof(UpdateTokenCommand),
-                request.UserId);
-
-            throw;
-        } 
+        return dal.Id;
     }
 }

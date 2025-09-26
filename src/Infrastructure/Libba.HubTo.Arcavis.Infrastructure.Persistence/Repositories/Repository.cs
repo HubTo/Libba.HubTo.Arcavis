@@ -87,28 +87,4 @@ public class Repository<T> : IRepository<T> where T : BaseEntity
         if (entity == null) throw new ArgumentNullException(nameof(entity));
         _dbSet.Remove(entity);
     }
-
-    public async Task SaveAsync(CancellationToken cancellationToken = default)
-    {
-        var entries = _context.ChangeTracker
-        .Entries<BaseEntity>()
-        .Where(e => e.State == EntityState.Added || e.State == EntityState.Modified);
-
-        foreach (var entry in entries)
-        {
-            if (entry.State == EntityState.Added)
-            {
-                entry.Entity.CreatedAt = DateTime.UtcNow;
-                entry.Entity.CreatedBy = _requestContext.UserId;
-            }
-            else if (entry.State == EntityState.Modified)
-            {
-                entry.Entity.UpdatedAt = DateTime.UtcNow;
-                entry.Entity.UpdatedBy = _requestContext.UserId;
-            }
-        }
-
-
-        await _context.SaveChangesAsync(cancellationToken);
-    }
 }
