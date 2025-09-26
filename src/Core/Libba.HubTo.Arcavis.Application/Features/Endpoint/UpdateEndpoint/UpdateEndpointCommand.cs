@@ -10,5 +10,5 @@ public record UpdateEndpointCommand
     string ControllerName,
     string ActionName,
     HttpVerb HttpVerb,
-    string NameSpace
+    string Namespace
 ) : ICommand<Guid>;
