@@ -1,19 +1,23 @@
-﻿using FluentAssertions;
-using Libba.HubTo.Arcavis.Application.Features.Endpoint.CreateEndpoint;
-using Libba.HubTo.Arcavis.Application.Interfaces.Repositories.Endpoint;
+﻿using Libba.HubTo.Arcavis.Application.Features.Endpoint.CreateEndpoint;
 using Libba.HubTo.Arcavis.Domain.Enums;
-using NSubstitute;
+using FluentAssertions;
 
 namespace Libba.HubTo.Arcavis.Application.UnitTests.Features.Endpoint.CreateEndpoint;
 
 public class CreateEndpointCommandValidatorTests
 {
-    private readonly CreateEndpointCommandValidator _validator = new CreateEndpointCommandValidator();
+    private readonly CreateEndpointCommandValidator _validator = new();
 
     [Fact]
-    public void WhenCommandIsValid_ShouldNotHaveValidationError()
+    public void GivenValidCommand_WhenValidationIsPerformed_ThenShouldSucceed()
     {
-        var command = new CreateEndpointCommand("Invoices", "InvoicesController", "GetInvoiceById", HttpVerb.GET, "Project.Features.Invoices");
+        var command = new CreateEndpointCommand(
+            ModuleName: "Invoices",
+            ControllerName: "InvoicesController",
+            ActionName: "GetInvoiceById",
+            HttpVerb: HttpVerb.GET,
+            Namespace: "Project.Features.Invoices"
+        );
 
         var result = _validator.Validate(command);
 
@@ -21,55 +25,40 @@ public class CreateEndpointCommandValidatorTests
     }
 
     [Theory]
-    [InlineData(null)]
-    [InlineData("")]
-    [InlineData(" ")]
-    public void WhenModuleNameIsInvalid_ShouldHaveValidationError(string moduleName)
-    {
-        var command = new CreateEndpointCommand(moduleName, "Controller", "Action", HttpVerb.GET, "Namespace");
-
-        var result = _validator.Validate(command);
-
-        result.IsValid.Should().BeFalse();
-        result.Errors.Should().Contain(e => e.PropertyName == "ModuleName");
-    }
-
-    [Fact]
-    public void WhenControllerNameIsEmpty_ShouldHaveValidationError()
-    {
-        var command = new CreateEndpointCommand("Module", "", "Action", HttpVerb.GET, "Namespace");
-
-        var result = _validator.Validate(command);
-
-        result.IsValid.Should().BeFalse();
-    }
-
-    [Theory]
-    [InlineData(null, "ControllerName")]
-    [InlineData("", "ControllerName")]
-    [InlineData(" ", "ControllerName")]
-    [InlineData(null, "ActionName")]
-    [InlineData("", "ActionName")]
-    [InlineData(" ", "ActionName")]
-    [InlineData(null, "ModuleName")]
-    [InlineData("", "ModuleName")]
-    [InlineData(" ", "ModuleName")]
-    [InlineData(null, "Namespace")]
-    [InlineData("", "Namespace")]
-    [InlineData(" ", "Namespace")]
-    public void WhenRequiredFieldsAreInvalid_ShouldHaveValidationError(string value, string propertyName)
+    [MemberData(nameof(GetInvalidRequiredFieldsTestData))]
+    public void GivenInvalidRequiredField_WhenValidationIsPerformed_ThenShouldFailForThatField(string invalidValue, string expectedPropertyName)
     {
         var command = new CreateEndpointCommand(
-            propertyName == "ModuleName" ? value : "ValidModule",
-            propertyName == "ControllerName" ? value : "ValidController",
-            propertyName == "ActionName" ? value : "ValidAction",
-            HttpVerb.GET,
-            propertyName == "Namespace" ? value : "Valid.Namespace"
+            ModuleName: expectedPropertyName == nameof(CreateEndpointCommand.ModuleName) ? invalidValue : "ValidModule",
+            ControllerName: expectedPropertyName == nameof(CreateEndpointCommand.ControllerName) ? invalidValue : "ValidController",
+            ActionName: expectedPropertyName == nameof(CreateEndpointCommand.ActionName) ? invalidValue : "ValidAction",
+            HttpVerb: HttpVerb.GET,
+            Namespace: expectedPropertyName == nameof(CreateEndpointCommand.Namespace) ? invalidValue : "Valid.Namespace"
         );
 
         var result = _validator.Validate(command);
 
         result.IsValid.Should().BeFalse();
-        result.Errors.Should().Contain(e => e.PropertyName == propertyName);
+        result.Errors.Should().ContainSingle(e => e.PropertyName == expectedPropertyName);
+    }
+
+    public static IEnumerable<object[]> GetInvalidRequiredFieldsTestData()
+    {
+        string[] invalidStrings = { null, "", "   " };
+        string[] properties =
+        {
+            nameof(CreateEndpointCommand.ModuleName),
+            nameof(CreateEndpointCommand.ControllerName),
+            nameof(CreateEndpointCommand.ActionName),
+            nameof(CreateEndpointCommand.Namespace)
+        };
+
+        foreach (var prop in properties)
+        {
+            foreach (var invalidStr in invalidStrings)
+            {
+                yield return new object[] { invalidStr, prop };
+            }
+        }
     }
 }
