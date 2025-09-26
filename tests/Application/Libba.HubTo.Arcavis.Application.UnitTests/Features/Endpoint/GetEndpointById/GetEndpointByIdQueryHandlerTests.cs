@@ -3,7 +3,6 @@ using Libba.HubTo.Arcavis.Application.Features.Endpoint.GetEndpointById;
 using Libba.HubTo.Arcavis.Application.Interfaces;
 using Libba.HubTo.Arcavis.Application.Interfaces.Repositories.Endpoint;
 using Libba.HubTo.Arcavis.Domain.Entities;
-using Microsoft.Extensions.Logging;
 using NSubstitute;
 
 namespace Libba.HubTo.Arcavis.Application.UnitTests.Features.Endpoint.GetEndpointById;
@@ -13,15 +12,13 @@ public class GetEndpointByIdQueryHandlerTests
     #region Mock Dependencies
     private readonly IEndpointRepository _endpointRepositoryMock;
     private readonly IArcavisMapper _mapperMock;
-    private readonly ILogger<GetEndpointByIdQueryHandler> _loggerMock;
     private readonly GetEndpointByIdQueryHandler _sut;
 
     public GetEndpointByIdQueryHandlerTests()
     {
         _endpointRepositoryMock = Substitute.For<IEndpointRepository>();
         _mapperMock = Substitute.For<IArcavisMapper>();
-        _loggerMock = Substitute.For<ILogger<GetEndpointByIdQueryHandler>>();
-        _sut = new GetEndpointByIdQueryHandler(_loggerMock, _endpointRepositoryMock, _mapperMock);
+        _sut = new GetEndpointByIdQueryHandler(_endpointRepositoryMock, _mapperMock);
     }
     #endregion
 

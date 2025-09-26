@@ -26,29 +26,8 @@ public class GetUserRoleByIdQueryHandler : IQueryHandler<GetUserRoleByIdQuery, U
 
     public async Task<UserRoleDetailDto?> Handle(GetUserRoleByIdQuery request, CancellationToken cancellationToken)
     {
-        _logger.LogInformation("Handling {QueryName}: Getting UserRole by ID: {Id}",
-            nameof(GetUserRoleByIdQueryHandler),
-            request.Id);
+        var entity = await _userRoleRepository.GetByIdAsync(request.Id, cancellationToken);
 
-        try
-        {
-            var entity = await _userRoleRepository.GetByIdAsync(request.Id, cancellationToken);
-
-            if (entity == null)
-            {
-                _logger.LogWarning("No UserRoleEntity matched the given id.");
-                return null;
-            }
-
-            return _mapper.Map<UserRoleDetailDto?>(entity);
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex, "An error occurred while handling {QueryName} by ID: {Id}.",
-                nameof(GetUserRoleByIdQuery),
-                request.Id);
-
-            throw;
-        }
+        return _mapper.Map<UserRoleDetailDto?>(entity);
     }
 }

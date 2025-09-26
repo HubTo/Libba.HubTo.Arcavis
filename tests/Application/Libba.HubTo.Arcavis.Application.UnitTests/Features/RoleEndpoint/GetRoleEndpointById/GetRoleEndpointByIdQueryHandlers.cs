@@ -2,7 +2,6 @@
 using Libba.HubTo.Arcavis.Application.Interfaces.Repositories.RoleEndpoint;
 using Libba.HubTo.Arcavis.Application.Interfaces;
 using Libba.HubTo.Arcavis.Domain.Entities;
-using Microsoft.Extensions.Logging;
 using FluentAssertions;
 using NSubstitute;
 
@@ -13,15 +12,13 @@ public class GetRoleEndpointByIdQueryHandlerTests
     #region Mock Dependencies
     private readonly IRoleEndpointRepository _roleEndpointRepositoryMock;
     private readonly IArcavisMapper _mapperMock;
-    private readonly ILogger<GetRoleEndpointByIdQueryHandler> _loggerMock;
     private readonly GetRoleEndpointByIdQueryHandler _sut;
 
     public GetRoleEndpointByIdQueryHandlerTests()
     {
         _roleEndpointRepositoryMock = Substitute.For<IRoleEndpointRepository>();
         _mapperMock = Substitute.For<IArcavisMapper>();
-        _loggerMock = Substitute.For<ILogger<GetRoleEndpointByIdQueryHandler>>();
-        _sut = new GetRoleEndpointByIdQueryHandler(_loggerMock, _roleEndpointRepositoryMock, _mapperMock);
+        _sut = new GetRoleEndpointByIdQueryHandler(_roleEndpointRepositoryMock, _mapperMock);
     }
     #endregion
 

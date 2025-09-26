@@ -2,24 +2,19 @@
 using Libba.HubTo.Arcavis.Application.Interfaces;
 using Libba.HubTo.Arcavis.Application.CQRS;
 using Libba.HubTo.Arcavis.Domain.Entities;
-using Microsoft.Extensions.Logging;
 
 namespace Libba.HubTo.Arcavis.Application.Features.UserRole.CreateUserRole;
 
 public class CreateUserRoleCommandHandler : ICommandHandler<CreateUserRoleCommand, Guid>
 {
     #region Dependencies
-    private readonly ILogger<CreateUserRoleCommandHandler> _logger;
     private readonly IUserRoleRepository _userRoleRepository;
     private readonly IArcavisMapper _mapper;
 
-
     public CreateUserRoleCommandHandler(
-        ILogger<CreateUserRoleCommandHandler> logger,
         IUserRoleRepository userRoleRepository,
         IArcavisMapper mapper)
     {
-        _logger = logger;
         _userRoleRepository = userRoleRepository;
         _mapper = mapper;
     }
@@ -27,30 +22,10 @@ public class CreateUserRoleCommandHandler : ICommandHandler<CreateUserRoleComman
 
     public async Task<Guid> Handle(CreateUserRoleCommand request, CancellationToken cancellationToken)
     {
-        _logger.LogInformation("Handling {CommandName}: Creating UserRole with RoleId, UserId: {RoleId}, {UserId}:", 
-            nameof(CreateUserRoleCommand), 
-            request.RoleId,
-            request.UserId);
+        var dal = _mapper.Map<UserRoleEntity>(request);
 
-        try
-        {
-            var dal = _mapper.Map<UserRoleEntity>(request);
+        await _userRoleRepository.AddAsync(dal, cancellationToken);
 
-            await _userRoleRepository.AddAsync(dal, cancellationToken);
-            await _userRoleRepository.SaveAsync(cancellationToken);
-
-            _logger.LogInformation("Successfully created UserRole with ID: {UserRoleId}", dal.Id);
-
-            return dal.Id;
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex, "An error occurred while handling {CommandName} for RoleId, UserId: {RoleId}, {UserId}:",
-                nameof(CreateUserRoleCommand),
-                request.RoleId,
-                request.UserId);
-
-            throw;
-        }
+        return dal.Id;
     }
 }

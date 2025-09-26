@@ -1,7 +1,6 @@
 ﻿using Libba.HubTo.Arcavis.Application.Interfaces.Repositories.Role;
 using Libba.HubTo.Arcavis.Application.Features.Role.DeleteRole;
 using Libba.HubTo.Arcavis.Domain.Entities;
-using Microsoft.Extensions.Logging;
 using FluentAssertions;
 using NSubstitute;
 
@@ -11,14 +10,12 @@ public class DeleteRoleCommandHandlerTests
 {
     #region Mock Dependencies
     private readonly IRoleRepository _roleRepositoryMock;
-    private readonly ILogger<DeleteRoleCommandHandler> _loggerMock;
     private readonly DeleteRoleCommandHandler _sut;
 
     public DeleteRoleCommandHandlerTests()
     {
         _roleRepositoryMock = Substitute.For<IRoleRepository>();
-        _loggerMock = Substitute.For<ILogger<DeleteRoleCommandHandler>>();
-        _sut = new DeleteRoleCommandHandler(_loggerMock, _roleRepositoryMock);
+        _sut = new DeleteRoleCommandHandler(_roleRepositoryMock);
     }
     #endregion
 
@@ -35,8 +32,6 @@ public class DeleteRoleCommandHandlerTests
         await _sut.Handle(command, CancellationToken.None);
 
         _roleRepositoryMock.Received(1).Delete(fakeRoleEntity);
-
-        await _roleRepositoryMock.Received(1).SaveAsync();
     }
 
     [Fact]
@@ -53,7 +48,5 @@ public class DeleteRoleCommandHandlerTests
         result.Should().BeFalse();
 
         _roleRepositoryMock.DidNotReceive().Delete(Arg.Any<RoleEntity>());
-        await _roleRepositoryMock.DidNotReceive().SaveAsync(Arg.Any<CancellationToken>());
-
     }
 }

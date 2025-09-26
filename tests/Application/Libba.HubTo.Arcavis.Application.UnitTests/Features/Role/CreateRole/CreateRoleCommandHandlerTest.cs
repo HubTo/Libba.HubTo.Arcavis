@@ -2,7 +2,6 @@
 using Libba.HubTo.Arcavis.Application.Features.Role.CreateRole;
 using Libba.HubTo.Arcavis.Application.Interfaces;
 using Libba.HubTo.Arcavis.Domain.Entities;
-using Microsoft.Extensions.Logging;
 using FluentAssertions;
 using NSubstitute;
 
@@ -13,15 +12,13 @@ public class CreateRoleCommandHandlerTests
     #region Mock Dependencies
     private readonly IRoleRepository _roleRepositoryMock;
     private readonly IArcavisMapper _mapperMock;
-    private readonly ILogger<CreateRoleCommandHandler> _loggerMock;
     private readonly CreateRoleCommandHandler _sut;
 
     public CreateRoleCommandHandlerTests()
     {
         _roleRepositoryMock = Substitute.For<IRoleRepository>();
         _mapperMock = Substitute.For<IArcavisMapper>();
-        _loggerMock = Substitute.For<ILogger<CreateRoleCommandHandler>>();
-        _sut = new CreateRoleCommandHandler(_loggerMock, _roleRepositoryMock, _mapperMock);
+        _sut = new CreateRoleCommandHandler(_roleRepositoryMock, _mapperMock);
     }
     #endregion
 
@@ -37,8 +34,6 @@ public class CreateRoleCommandHandlerTests
         var actualId = await _sut.Handle(command, CancellationToken.None);
 
         await _roleRepositoryMock.Received(1).AddAsync(mappedEntity, Arg.Any<CancellationToken>());
-
-        await _roleRepositoryMock.Received(1).SaveAsync(Arg.Any<CancellationToken>());
 
         actualId.Should().Be(expectedId);
     }
@@ -60,7 +55,5 @@ public class CreateRoleCommandHandlerTests
 
         await act.Should().ThrowAsync<InvalidOperationException>()
                  .WithMessage("Database connection failed");
-
-        await _roleRepositoryMock.DidNotReceive().SaveAsync(Arg.Any<CancellationToken>());
     }
 }

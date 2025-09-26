@@ -1,7 +1,6 @@
 ﻿using Libba.HubTo.Arcavis.Application.Features.Endpoint.DeleteEndpoint;
 using Libba.HubTo.Arcavis.Application.Interfaces.Repositories.Endpoint;
 using Libba.HubTo.Arcavis.Domain.Entities;
-using Microsoft.Extensions.Logging;
 using FluentAssertions;
 using NSubstitute;
 
@@ -11,14 +10,12 @@ public class DeleteEndpointCommandHandlerTests
 {
     #region Mock Dependencies
     private readonly IEndpointRepository _endpointRepositoryMock;
-    private readonly ILogger<DeleteEndpointCommandHandler> _loggerMock;
     private readonly DeleteEndpointCommandHandler _sut;
 
     public DeleteEndpointCommandHandlerTests()
     {
         _endpointRepositoryMock = Substitute.For<IEndpointRepository>();
-        _loggerMock = Substitute.For<ILogger<DeleteEndpointCommandHandler>>();
-        _sut = new DeleteEndpointCommandHandler(_loggerMock, _endpointRepositoryMock);
+        _sut = new DeleteEndpointCommandHandler(_endpointRepositoryMock);
     }
     #endregion
 
@@ -35,8 +32,6 @@ public class DeleteEndpointCommandHandlerTests
         await _sut.Handle(command, CancellationToken.None);
 
         _endpointRepositoryMock.Received(1).Delete(fakeEndpointEntity);
-
-        await _endpointRepositoryMock.Received(1).SaveAsync();
     }
 
     [Fact]
@@ -53,7 +48,5 @@ public class DeleteEndpointCommandHandlerTests
         result.Should().BeFalse();
 
         _endpointRepositoryMock.DidNotReceive().Delete(Arg.Any<EndpointEntity>());
-        await _endpointRepositoryMock.DidNotReceive().SaveAsync(Arg.Any<CancellationToken>());
-
     }
 }
