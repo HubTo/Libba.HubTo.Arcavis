@@ -10,17 +10,14 @@ public class DeleteEndpointCommandHandler : ICommandHandler<DeleteEndpointComman
     #region Dependencies
     private readonly ILogger<DeleteEndpointCommandHandler> _logger;
     private readonly IEndpointRepository _endpointRepository;
-    private readonly IArcavisMapper _mapper;
 
 
     public DeleteEndpointCommandHandler(
         ILogger<DeleteEndpointCommandHandler> logger,
-        IEndpointRepository endpointRepository,
-        IArcavisMapper mapper)
+        IEndpointRepository endpointRepository)
     {
         _logger = logger;
         _endpointRepository = endpointRepository;
-        _mapper = mapper;
     }
     #endregion
 
