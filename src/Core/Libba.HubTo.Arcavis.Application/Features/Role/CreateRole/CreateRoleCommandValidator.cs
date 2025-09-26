@@ -4,7 +4,14 @@ namespace Libba.HubTo.Arcavis.Application.Features.Role.CreateRole;
 
 public class CreateRoleCommandValidator : AbstractValidator<CreateRoleCommand>
 {
+    #region Dependencies
     public CreateRoleCommandValidator()
+    {
+        InitializeRules();
+    }
+    #endregion
+
+    public void InitializeRules()
     {
         RuleFor(x => x.Name)
             .NotEmpty().WithMessage("Name cannot be empty.")

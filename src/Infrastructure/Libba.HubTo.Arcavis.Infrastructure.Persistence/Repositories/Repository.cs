@@ -1,5 +1,5 @@
-﻿using Libba.HubTo.Arcavis.Application.Interfaces;
-using Libba.HubTo.Arcavis.Application.Interfaces.Repositories;
+﻿using Libba.HubTo.Arcavis.Application.Interfaces.Repositories;
+using Libba.HubTo.Arcavis.Application.Interfaces;
 using Libba.HubTo.Arcavis.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
@@ -42,6 +42,27 @@ public class Repository<T> : IRepository<T> where T : BaseEntity
     {
         return await _dbSet.FirstOrDefaultAsync(predicate, cancellationToken);
     }
+
+    public async Task<bool> ExistsAsync(Guid id, CancellationToken cancellationToken = default)
+    {
+        return await _dbSet.AnyAsync(e => e.Id == id, cancellationToken);
+    }
+
+    public async Task<bool> ExistsAsync(Expression<Func<T, bool>> predicate, CancellationToken cancellationToken = default)
+    {
+        return await _dbSet.AnyAsync(predicate, cancellationToken);
+    }
+
+    public async Task<int> CountAsync(CancellationToken cancellationToken = default)
+    {
+        return await _dbSet.CountAsync(cancellationToken);
+    }
+
+    public async Task<int> CountAsync(Expression<Func<T, bool>> predicate, CancellationToken cancellationToken = default)
+    {
+        return await _dbSet.CountAsync(predicate, cancellationToken);
+    }
+
 
     public async Task AddAsync(T entity, CancellationToken cancellationToken = default)
     {

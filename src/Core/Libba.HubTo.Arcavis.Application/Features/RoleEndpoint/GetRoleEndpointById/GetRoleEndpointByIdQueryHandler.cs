@@ -1,8 +1,8 @@
-﻿using Libba.HubTo.Arcavis.Application.Interfaces.Repositories.RoleEndpoint;
+﻿using Libba.HubTo.Arcavis.Application.Features.RoleEndpoint.GetAllRoleEndpoints;
+using Libba.HubTo.Arcavis.Application.Interfaces.Repositories.RoleEndpoint;
 using Libba.HubTo.Arcavis.Application.Interfaces;
 using Libba.HubTo.Arcavis.Application.CQRS;
 using Microsoft.Extensions.Logging;
-using Libba.HubTo.Arcavis.Application.Features.RoleEndpoint.GetAllRoleEndpoint;
 
 namespace Libba.HubTo.Arcavis.Application.Features.RoleEndpoint.GetRoleEndpointById;
 

@@ -5,7 +5,14 @@ namespace Libba.HubTo.Arcavis.Application.Features.Endpoint.CreateEndpoint;
 
 public class CreateEndpointCommandValidator : AbstractValidator<CreateEndpointCommand>
 {
+    #region Dependencies
     public CreateEndpointCommandValidator()
+    {
+        InitializeRules();
+    }
+    #endregion
+
+    public void InitializeRules()
     {
         RuleFor(x => x.ModuleName)
             .NotEmpty().WithMessage("Module name cannot be empty.")

@@ -3,7 +3,7 @@ using Libba.HubTo.Arcavis.Application.Interfaces;
 using Libba.HubTo.Arcavis.Application.CQRS;
 using Microsoft.Extensions.Logging;
 
-namespace Libba.HubTo.Arcavis.Application.Features.RoleEndpoint.GetAllRoleEndpoint;
+namespace Libba.HubTo.Arcavis.Application.Features.RoleEndpoint.GetAllRoleEndpoints;
 
 public class GetAllRoleEndpointsQueryHandler : IQueryHandler<GetAllRoleEndpointsQuery, IEnumerable<RoleEndpointListItemDto>?>
 {
