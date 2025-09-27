@@ -28,6 +28,9 @@ public class GetUserRoleByIdQueryHandler : IQueryHandler<GetUserRoleByIdQuery, U
     {
         var entity = await _userRoleRepository.GetByIdAsync(request.Id, cancellationToken);
 
+        if (entity == null)
+            return null;
+
         return _mapper.Map<UserRoleDetailDto?>(entity);
     }
 }

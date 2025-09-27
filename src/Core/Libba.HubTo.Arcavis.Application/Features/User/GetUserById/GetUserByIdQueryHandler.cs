@@ -24,6 +24,9 @@ public class GetUserByIdQueryHandler : IQueryHandler<GetUserByIdQuery, UserDetai
     {
         var entity = await _userRepository.GetByIdAsync(request.Id, cancellationToken);
 
+        if (entity == null)
+            return null;
+
         return _mapper.Map<UserDetailDto?>(entity);
     }
 }

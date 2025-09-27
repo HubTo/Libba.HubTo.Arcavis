@@ -1,7 +1,7 @@
-﻿using FluentAssertions;
-using Libba.HubTo.Arcavis.Application.Features.RoleEndpoint.UpdateRoleEndpoint;
+﻿using Libba.HubTo.Arcavis.Application.Features.RoleEndpoint.UpdateRoleEndpoint;
 using Libba.HubTo.Arcavis.Application.Interfaces.Repositories.Endpoint;
 using Libba.HubTo.Arcavis.Application.Interfaces.Repositories.Role;
+using FluentAssertions;
 using NSubstitute;
 
 namespace Libba.HubTo.Arcavis.Application.UnitTests.Features.RoleEndpoint.UpdateRoleEndpoint;

@@ -8,21 +8,20 @@ public class DeleteTokenCommandHandler : ICommandHandler<DeleteTokenCommand, boo
 {
     #region Dependencies
     private readonly ITokenRepository _tokenRepository;
-    private readonly IArcavisMapper _mapper;
-
 
     public DeleteTokenCommandHandler(
-        ITokenRepository tokenRepository,
-        IArcavisMapper mapper)
+        ITokenRepository tokenRepository)
     {
         _tokenRepository = tokenRepository;
-        _mapper = mapper;
     }
     #endregion
 
     public async Task<bool> Handle(DeleteTokenCommand request, CancellationToken cancellationToken)
     {
         var dal = await _tokenRepository.GetByIdAsync(request.Id, cancellationToken);
+
+        if (dal is null)
+            return false;
 
         _tokenRepository.Delete(dal);
 

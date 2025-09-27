@@ -1,7 +1,7 @@
 ﻿using Libba.HubTo.Arcavis.Application.Features.Token.GetTokenById;
+using Libba.HubTo.Arcavis.Application.Features.Token.GetAllTokens;
 using Libba.HubTo.Arcavis.Application.Features.Token.CreateToken;
 using Libba.HubTo.Arcavis.Application.Features.Token.UpdateToken;
-using Libba.HubTo.Arcavis.Application.Features.Token.GetAllToken;
 using Libba.HubTo.Arcavis.Domain.Entities;
 using AutoMapper;
 

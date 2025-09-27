@@ -2,7 +2,7 @@
 using Libba.HubTo.Arcavis.Application.Interfaces;
 using Libba.HubTo.Arcavis.Application.CQRS;
 
-namespace Libba.HubTo.Arcavis.Application.Features.Token.GetAllToken;
+namespace Libba.HubTo.Arcavis.Application.Features.Token.GetAllTokens;
 
 public class GetAllTokensQueryHandler : IQueryHandler<GetAllTokensQuery, IEnumerable<TokenListItemDto>?>
 {
@@ -23,6 +23,9 @@ public class GetAllTokensQueryHandler : IQueryHandler<GetAllTokensQuery, IEnumer
     public async Task<IEnumerable<TokenListItemDto>?> Handle(GetAllTokensQuery request, CancellationToken cancellationToken)
     {
         var entity = await _tokenRepository.GetAllAsync(cancellationToken);
+
+        if (entity == null)
+            return null;
 
         return _mapper.Map<IEnumerable<TokenListItemDto>>(entity);
     }

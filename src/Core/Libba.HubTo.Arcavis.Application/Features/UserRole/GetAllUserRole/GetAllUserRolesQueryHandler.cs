@@ -23,6 +23,9 @@ public class GetAllUserRolesQueryHandler : IQueryHandler<GetAllUserRolesQuery, I
     {
         var entity = await _userRoleRepository.GetAllAsync(cancellationToken);
 
+        if (entity == null)
+            return null;
+
         return _mapper.Map<IEnumerable<UserRoleListItemDto>>(entity);
     }
 }
