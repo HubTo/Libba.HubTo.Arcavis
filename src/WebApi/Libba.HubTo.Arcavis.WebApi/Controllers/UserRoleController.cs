@@ -1,7 +1,7 @@
 ﻿using Libba.HubTo.Arcavis.Application.Features.UserRole.GetUserRoleById;
+using Libba.HubTo.Arcavis.Application.Features.UserRole.GetAllUserRoles;
 using Libba.HubTo.Arcavis.Application.Features.UserRole.CreateUserRole;
 using Libba.HubTo.Arcavis.Application.Features.UserRole.DeleteUserRole;
-using Libba.HubTo.Arcavis.Application.Features.UserRole.GetAllUserRole;
 using Libba.HubTo.Arcavis.Application.Features.UserRole.UpdateUserRole;
 using Libba.HubTo.Arcavis.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;

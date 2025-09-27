@@ -1,7 +1,6 @@
 ﻿using FluentValidation;
 using Libba.HubTo.Arcavis.Application.Behaviors;
 using Libba.HubTo.Arcavis.Application.Interfaces;
-using Libba.HubTo.Arcavis.Application.Mapping;
 using Libba.HubTo.Arcavis.Application.Services;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;

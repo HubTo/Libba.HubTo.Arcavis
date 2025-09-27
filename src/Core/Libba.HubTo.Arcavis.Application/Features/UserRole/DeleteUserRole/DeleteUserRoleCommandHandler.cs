@@ -8,20 +8,20 @@ public class DeleteUserRoleCommandHandler : ICommandHandler<DeleteUserRoleComman
 {
     #region Dependencies
     private readonly IUserRoleRepository _userRoleRepository;
-    private readonly IArcavisMapper _mapper;
 
     public DeleteUserRoleCommandHandler(
-        IUserRoleRepository userRoleRepository,
-        IArcavisMapper mapper)
+        IUserRoleRepository userRoleRepository)
     {
         _userRoleRepository = userRoleRepository;
-        _mapper = mapper;
     }
     #endregion
 
     public async Task<bool> Handle(DeleteUserRoleCommand request, CancellationToken cancellationToken)
     {
         var dal = await _userRoleRepository.GetByIdAsync(request.Id, cancellationToken);
+
+        if (dal == null)
+            return false;
 
         _userRoleRepository.Delete(dal);
 
