@@ -2,7 +2,7 @@
 using StackExchange.Redis;
 using System.Text.Json;
 
-namespace Libba.HubTo.Arcavis.Infrastructure.Redis.Service;
+namespace Libba.HubTo.Arcavis.Infrastructure.Redis.Services;
 
 public class RedisCacheService : ICacheService
 {

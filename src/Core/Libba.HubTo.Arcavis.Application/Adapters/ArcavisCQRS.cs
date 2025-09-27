@@ -1,7 +1,7 @@
 ﻿using Libba.HubTo.Arcavis.Application.Interfaces;
 using MediatR;
 
-namespace Libba.HubTo.Arcavis.Application.Services;
+namespace Libba.HubTo.Arcavis.Application.Adapters;
 
 public class ArcavisCQRS : IArcavisCQRS
 {

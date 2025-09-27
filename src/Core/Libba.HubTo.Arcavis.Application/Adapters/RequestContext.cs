@@ -1,6 +1,6 @@
 ﻿using Libba.HubTo.Arcavis.Application.Interfaces;
 
-namespace Libba.HubTo.Arcavis.Application.Services;
+namespace Libba.HubTo.Arcavis.Application.Adapters;
 
 public class RequestContext : IRequestContext
 {
