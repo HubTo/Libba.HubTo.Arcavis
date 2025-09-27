@@ -4,8 +4,6 @@ namespace Libba.HubTo.Arcavis.Application.Features.User.CreateUser;
 
 public record CreateUserCommand
 (
-    string Email,
     string PhoneCode,
-    string PhoneNumber,
-    string Password
+    string PhoneNumber
 ) : ICommand<Guid>;

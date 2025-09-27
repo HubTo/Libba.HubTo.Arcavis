@@ -5,10 +5,6 @@ namespace Libba.HubTo.Arcavis.Application.Features.User.UpdateUser;
 public record UpdateUserCommand
 (
     Guid Id,
-    string Email,
     string PhoneCode,
-    string PhoneNumber,
-    string Password,
-    bool IsAccountActive,
-    bool IsEmailVerified
+    string PhoneNumber
 ) : ICommand<Guid>;

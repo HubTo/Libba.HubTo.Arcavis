@@ -7,12 +7,13 @@ public class UpdateTokenCommandValidator : AbstractValidator<UpdateTokenCommand>
     #region Dependencies
     public UpdateTokenCommandValidator()
     {
-        
+        InitializeRules();
     }
     #endregion
 
     public void InitializeRules()
     {
-
+        RuleFor(x => x.Id)
+            .NotEmpty().WithMessage("The ID of the relationship cannot be empty.");
     }
 }

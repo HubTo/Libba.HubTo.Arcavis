@@ -8,14 +8,11 @@ public class DeleteUserCommandHandler : ICommandHandler<DeleteUserCommand, bool>
 {
     #region Dependencies
     private readonly IUserRepository _userRepository;
-    private readonly IArcavisMapper _mapper;
 
     public DeleteUserCommandHandler(
-        IUserRepository userRepository,
-        IArcavisMapper mapper)
+        IUserRepository userRepository)
     {
         _userRepository = userRepository;
-        _mapper = mapper;
     }
     #endregion
 
@@ -23,6 +20,8 @@ public class DeleteUserCommandHandler : ICommandHandler<DeleteUserCommand, bool>
     {
         var dal = await _userRepository.GetByIdAsync(request.Id, cancellationToken);
 
+        if (dal == null)
+            return false;
 
         _userRepository.Delete(dal);
 

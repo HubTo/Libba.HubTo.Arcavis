@@ -27,7 +27,6 @@ public class CreateUserCommandHandler : ICommandHandler<CreateUserCommand, Guid>
 
         dal.IsAccountActive = true;
         dal.IsEmailVerified = false;
-        dal.PasswordHash = Argon2Helper.HashPassword(request.Password);
 
         await _userRepository.AddAsync(dal, cancellationToken);
 

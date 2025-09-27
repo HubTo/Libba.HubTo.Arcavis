@@ -2,7 +2,7 @@
 using Libba.HubTo.Arcavis.Application.Interfaces;
 using Libba.HubTo.Arcavis.Application.CQRS;
 
-namespace Libba.HubTo.Arcavis.Application.Features.User.GetAllUser;
+namespace Libba.HubTo.Arcavis.Application.Features.User.GetAllUsers;
 
 public class GetAllUsersQueryHandler : IQueryHandler<GetAllUsersQuery, IEnumerable<UserListItemDto>?>
 {

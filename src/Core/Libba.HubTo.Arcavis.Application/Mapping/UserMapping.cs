@@ -1,6 +1,6 @@
 ﻿using Libba.HubTo.Arcavis.Application.Features.User.GetUserById;
+using Libba.HubTo.Arcavis.Application.Features.User.GetAllUsers;
 using Libba.HubTo.Arcavis.Application.Features.User.CreateUser;
-using Libba.HubTo.Arcavis.Application.Features.User.GetAllUser;
 using Libba.HubTo.Arcavis.Application.Features.User.UpdateUser;
 using Libba.HubTo.Arcavis.Domain.Entities;
 using AutoMapper;
