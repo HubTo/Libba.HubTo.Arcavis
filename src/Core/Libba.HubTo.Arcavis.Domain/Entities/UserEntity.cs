@@ -15,11 +15,6 @@ public class UserEntity : BaseEntity
 
     #region Columns
     /// <summary>
-    /// Email Address
-    /// </summary>
-    public string Email { get; set; } = null!;
-
-    /// <summary>
     /// Phone Country Code
     /// </summary>
     public string PhoneCode { get; set; } = string.Empty;
@@ -28,11 +23,6 @@ public class UserEntity : BaseEntity
     /// Phone Number
     /// </summary>
     public string PhoneNumber { get; set; } = string.Empty;
-
-    /// <summary>
-    /// HAshed Password With Argon2
-    /// </summary>
-    public string PasswordHash { get; set; } = null!;
 
     /// <summary>
     /// Is Account Active
