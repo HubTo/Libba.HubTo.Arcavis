@@ -1,5 +1,5 @@
 ﻿using Libba.HubTo.Arcavis.Application.Interfaces.Caching;
-using Libba.HubTo.Arcavis.Infrastructure.Redis.Service;
+using Libba.HubTo.Arcavis.Infrastructure.Redis.Services;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using StackExchange.Redis;

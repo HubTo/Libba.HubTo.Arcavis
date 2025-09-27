@@ -21,4 +21,7 @@
   <Folder Name="/tests/Application/">
     <Project Path="tests/Application/Libba.HubTo.Arcavis.Application.UnitTests/Libba.HubTo.Arcavis.Application.UnitTests.csproj" Id="f656f509-5f55-4fe5-a771-99d04144aa8a" />
   </Folder>
+  <Folder Name="/tests/Infrastructure/">
+    <Project Path="tests/Infrastructure/Libba.HubTo.Arcavis.Infrastructure.Redis.UnitTests/Libba.HubTo.Arcavis.Infrastructure.Redis.UnitTests.csproj" Id="812a3245-c2f9-44e7-a808-0ed9c5e1ec6e" />
+  </Folder>
 </Solution>
