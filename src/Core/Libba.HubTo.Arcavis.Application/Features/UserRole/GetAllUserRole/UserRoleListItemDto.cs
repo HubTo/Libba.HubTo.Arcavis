@@ -1,4 +1,4 @@
-﻿namespace Libba.HubTo.Arcavis.Application.Features.UserRole.GetAllUserRole;
+﻿namespace Libba.HubTo.Arcavis.Application.Features.UserRole.GetAllUserRoles;
 
 public class UserRoleListItemDto
 {

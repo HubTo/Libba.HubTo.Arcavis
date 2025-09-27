@@ -2,4 +2,5 @@
 
 public partial interface IUserRoleRepository
 {
+    Task<bool> DoesRelationExistAsync(Guid userId, Guid roleId, CancellationToken cancellationToken = default);
 }

@@ -3,7 +3,6 @@ using Libba.HubTo.Arcavis.Application.Features.User.UpdateUser;
 using Libba.HubTo.Arcavis.Domain.Entities;
 using FluentValidation.TestHelper;
 using System.Linq.Expressions;
-using FluentAssertions;
 using NSubstitute;
 
 namespace Libba.HubTo.Arcavis.Application.UnitTests.Features.User.UpdateUser;

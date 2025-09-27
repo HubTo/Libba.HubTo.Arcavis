@@ -2,7 +2,7 @@
 using Libba.HubTo.Arcavis.Application.Interfaces;
 using Libba.HubTo.Arcavis.Application.CQRS;
 
-namespace Libba.HubTo.Arcavis.Application.Features.UserRole.GetAllUserRole;
+namespace Libba.HubTo.Arcavis.Application.Features.UserRole.GetAllUserRoles;
 
 public class GetAllUserRolesQueryHandler : IQueryHandler<GetAllUserRolesQuery, IEnumerable<UserRoleListItemDto>?>
 {

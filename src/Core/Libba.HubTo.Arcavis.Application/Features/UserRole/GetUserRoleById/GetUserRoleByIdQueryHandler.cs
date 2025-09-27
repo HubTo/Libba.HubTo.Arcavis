@@ -8,17 +8,14 @@ namespace Libba.HubTo.Arcavis.Application.Features.UserRole.GetUserRoleById;
 public class GetUserRoleByIdQueryHandler : IQueryHandler<GetUserRoleByIdQuery, UserRoleDetailDto?>
 {
     #region Dependencies
-    private readonly ILogger<GetUserRoleByIdQueryHandler> _logger;
     private readonly IUserRoleRepository _userRoleRepository;
     private readonly IArcavisMapper _mapper;
 
 
     public GetUserRoleByIdQueryHandler(
-        ILogger<GetUserRoleByIdQueryHandler> logger,
         IUserRoleRepository userRoleRepository,
         IArcavisMapper mapper)
     {
-        _logger = logger;
         _userRoleRepository = userRoleRepository;
         _mapper = mapper;
     }

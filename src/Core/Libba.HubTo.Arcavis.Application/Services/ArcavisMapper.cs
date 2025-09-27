@@ -1,7 +1,7 @@
 ﻿using Libba.HubTo.Arcavis.Application.Interfaces;
 using AutoMapper;
 
-namespace Libba.HubTo.Arcavis.Application.Mapping;
+namespace Libba.HubTo.Arcavis.Application.Services;
 public class ArcavisMapper : IArcavisMapper
 {
     private readonly IMapper _mapper;
