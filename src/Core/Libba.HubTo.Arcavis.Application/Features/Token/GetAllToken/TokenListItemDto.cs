@@ -1,4 +1,4 @@
-﻿namespace Libba.HubTo.Arcavis.Application.Features.Token.GetAllToken;
+﻿namespace Libba.HubTo.Arcavis.Application.Features.Token.GetAllTokens;
 
 public class TokenListItemDto
 {

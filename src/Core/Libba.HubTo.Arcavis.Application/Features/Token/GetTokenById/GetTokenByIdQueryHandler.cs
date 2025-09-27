@@ -1,5 +1,4 @@
 ﻿using Libba.HubTo.Arcavis.Application.Interfaces.Repositories.Token;
-using Libba.HubTo.Arcavis.Application.Features.Token.GetAllToken;
 using Libba.HubTo.Arcavis.Application.Interfaces;
 using Libba.HubTo.Arcavis.Application.CQRS;
 
@@ -24,6 +23,9 @@ public class GetTokenByIdQueryHandler : IQueryHandler<GetTokenByIdQuery, TokenDe
     public async Task<TokenDetailDto?> Handle(GetTokenByIdQuery request, CancellationToken cancellationToken)
     {
         var entity = await _tokenRepository.GetByIdAsync(request.Id, cancellationToken);
+
+        if (entity == null)
+            return null;
 
         return _mapper.Map<TokenDetailDto?>(entity);
     }

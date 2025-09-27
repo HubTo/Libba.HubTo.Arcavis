@@ -23,6 +23,9 @@ public class GetAllUsersQueryHandler : IQueryHandler<GetAllUsersQuery, IEnumerab
     {
         var entity = await _userRepository.GetAllAsync(cancellationToken);
 
+        if (entity == null)
+            return null;
+
         return _mapper.Map<IEnumerable<UserListItemDto>>(entity);
     }
 }
