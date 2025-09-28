@@ -44,10 +44,12 @@ public class UpdateUserCommandValidator : AbstractValidator<UpdateUserCommand>
 
     private async Task<bool> BeUniquePhoneNumber(UpdateUserCommand command, CancellationToken cancellationToken)
     {
-        Expression<Func<UserEntity, bool>> predicate = user =>
+        Expression<Func<UserEntity, bool>> predicate = user => 
+            user.Id != command.Id && 
             user.PhoneCode == command.PhoneCode &&
             user.PhoneNumber == command.PhoneNumber;
 
         return !await _userRepository.ExistsAsync(predicate, cancellationToken);
+
     }
 }
