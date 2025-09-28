@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using FluentValidation;
+using System.Net;
 using System.Text.Json;
 
 namespace Libba.HubTo.Arcavis.WebApi.Middlewares;
@@ -24,7 +25,7 @@ public class GlobalExceptionHandlingMiddleware
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "An unhandled exception has occurred.");
+            _logger.LogError(ex, "An exception occurred: {ErrorMessage}", ex.Message);
             await HandleExceptionAsync(context, ex);
         }
     }
@@ -32,15 +33,36 @@ public class GlobalExceptionHandlingMiddleware
     private static Task HandleExceptionAsync(HttpContext context, Exception exception)
     {
         context.Response.ContentType = "application/json";
+
+        if (exception is ValidationException validationException)
+        {
+            context.Response.StatusCode = (int)HttpStatusCode.BadRequest;
+
+            var errors = validationException.Errors
+                .GroupBy(e => e.PropertyName)
+                .ToDictionary(g => g.Key, g => g.Select(e => e.ErrorMessage).ToArray());
+
+            var validationResponse = new
+            {
+                Title = "One or more validation errors occurred.",
+                Status = context.Response.StatusCode,
+                Errors = errors,
+                TraceId = context.TraceIdentifier
+            };
+
+            return context.Response.WriteAsync(JsonSerializer.Serialize(validationResponse));
+        }
+
         context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
 
-        var response = new
+        var internalErrorResponse = new
         {
-            StatusCode = context.Response.StatusCode,
-            Message = "An internal server error has occurred. Please try again later.",
+            Title = "An internal server error has occurred.",
+            Status = context.Response.StatusCode,
+            Detail = "Please try again later or contact support.",
+            TraceId = context.TraceIdentifier
         };
 
-        var jsonResponse = JsonSerializer.Serialize(response);
-        return context.Response.WriteAsync(jsonResponse);
+        return context.Response.WriteAsync(JsonSerializer.Serialize(internalErrorResponse));
     }
 }

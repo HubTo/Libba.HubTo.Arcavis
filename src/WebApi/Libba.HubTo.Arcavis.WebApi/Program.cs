@@ -3,6 +3,7 @@ using Libba.HubTo.Arcavis.Infrastructure.Redis.Extensions;
 using Libba.HubTo.Arcavis.Application.Extensions;
 using Libba.HubTo.Arcavis.WebApi.ActionFilters;
 using Libba.HubTo.Arcavis.WebApi.Middlewares;
+using Libba.HubTo.Arcavis.WebApi.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,7 +13,8 @@ builder.Services.AddApplicationRegistration();
 builder.Services.AddRedisRegistration(builder.Configuration);
 
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .ConfigureCustomApiBehavior();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 

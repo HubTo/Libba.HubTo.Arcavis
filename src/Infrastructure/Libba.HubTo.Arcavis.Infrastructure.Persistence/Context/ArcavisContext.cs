@@ -1,6 +1,7 @@
 ﻿using Libba.HubTo.Arcavis.Application.Interfaces;
 using Libba.HubTo.Arcavis.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Libba.HubTo.Arcavis.Infrastructure.Persistence.Context;
 
@@ -18,15 +19,12 @@ public class ArcavisContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
-
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(ArcavisContext).Assembly);
-
         var entityTypes = typeof(BaseEntity).Assembly
             .GetTypes()
             .Where(t => t.IsClass
                         && !t.IsAbstract
                         && typeof(BaseEntity).IsAssignableFrom(t));
-
         foreach (var entityType in entityTypes)
         {
             modelBuilder.Entity(entityType);
@@ -42,17 +40,22 @@ public class ArcavisContext : DbContext
                 case EntityState.Added:
                     entry.Entity.CreatedBy = _requestContext.UserId == Guid.Empty ? null : _requestContext.UserId;
                     entry.Entity.CreatedAt = DateTime.UtcNow;
-                    break;
-
-                case EntityState.Modified:
                     entry.Entity.UpdatedBy = _requestContext.UserId == Guid.Empty ? null : _requestContext.UserId;
                     entry.Entity.UpdatedAt = DateTime.UtcNow;
                     break;
+                case EntityState.Modified:
+                    entry.Entity.UpdatedBy = _requestContext.UserId == Guid.Empty ? null : _requestContext.UserId;
+                    entry.Entity.UpdatedAt = DateTime.UtcNow;
+
+                    if (entry.Entity.CreatedAt.Kind == DateTimeKind.Unspecified)
+                    {
+                        entry.Entity.CreatedAt = DateTime.SpecifyKind(entry.Entity.CreatedAt, DateTimeKind.Utc);
+                    }
+                    break;
             }
         }
-
         return base.SaveChangesAsync(cancellationToken);
-    }
 
+    }
 }
 
