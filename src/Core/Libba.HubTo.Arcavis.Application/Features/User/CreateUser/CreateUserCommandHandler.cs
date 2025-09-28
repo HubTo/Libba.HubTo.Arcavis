@@ -1,6 +1,5 @@
 ﻿using Libba.HubTo.Arcavis.Application.Interfaces.Repositories.User;
 using Libba.HubTo.Arcavis.Application.Interfaces;
-using Libba.HubTo.Arcavis.Common.Helpers.Argon2;
 using Libba.HubTo.Arcavis.Application.CQRS;
 using Libba.HubTo.Arcavis.Domain.Entities;
 

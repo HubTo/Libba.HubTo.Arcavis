@@ -1,7 +1,4 @@
 <Solution>
-  <Folder Name="/Solution Items/">
-    <File Path="DbScripts/Scripts.txt" />
-  </Folder>
   <Folder Name="/src/" />
   <Folder Name="/src/Common/">
     <Project Path="src/Common/Libba.HubTo.Arcavis.Common/Libba.HubTo.Arcavis.Common.csproj" Id="d9d74024-9ac1-42b2-81f2-a2a9a7776a47" />
@@ -23,5 +20,8 @@
   </Folder>
   <Folder Name="/tests/Infrastructure/">
     <Project Path="tests/Infrastructure/Libba.HubTo.Arcavis.Infrastructure.Redis.UnitTests/Libba.HubTo.Arcavis.Infrastructure.Redis.UnitTests.csproj" Id="812a3245-c2f9-44e7-a808-0ed9c5e1ec6e" />
+  </Folder>
+  <Folder Name="/tests/Presentation/">
+    <Project Path="tests/Presentation/Libba.HubTo.Arcavis.WebApi.IntegrationTests/Libba.HubTo.Arcavis.WebApi.IntegrationTests.csproj" Id="02ec7ee5-e9e2-4561-ae91-5beeb7586261" />
   </Folder>
 </Solution>

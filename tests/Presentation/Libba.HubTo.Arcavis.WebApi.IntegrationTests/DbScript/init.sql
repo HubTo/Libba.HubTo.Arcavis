@@ -1,9 +1,4 @@
--- ======================
--- BASE ENTITY TEMPLATE
--- ======================
--- Ortak kolonlar: ID, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT
-
--- ======================
+﻿-- ======================
 -- ENDPOINT
 -- ======================
 CREATE TABLE "ENDPOINT" (
@@ -20,7 +15,7 @@ CREATE TABLE "ENDPOINT" (
 );
 
 -- ======================
--- ROLE
+--ROLE
 -- ======================
 CREATE TABLE "ROLE" (
     "ID" UUID PRIMARY KEY,
@@ -33,7 +28,7 @@ CREATE TABLE "ROLE" (
 );
 
 -- ======================
--- ROLE_ENDPOINT
+--ROLE_ENDPOINT
 -- ======================
 CREATE TABLE "ROLE_ENDPOINT" (
     "ID" UUID PRIMARY KEY,
@@ -49,7 +44,7 @@ CREATE TABLE "ROLE_ENDPOINT" (
 );
 
 -- ======================
--- USER
+--USER
 -- ======================
 CREATE TABLE "USER" (
     "ID" UUID PRIMARY KEY,
@@ -61,12 +56,11 @@ CREATE TABLE "USER" (
     "PHONE_NUMBER" VARCHAR(20),
     "IS_ACCOUNT_ACTIVE" BOOLEAN NOT NULL DEFAULT TRUE,
     "IS_EMAIL_VERIFIED" BOOLEAN NOT NULL DEFAULT FALSE,
-    CONSTRAINT uq_user_email UNIQUE ("EMAIL"),
-    CONSTRAINT uq_user_phone UNIQUE ("PHONE_NUMBER")
+    CONSTRAINT uq_user_phone UNIQUE ("PHONE_CODE", "PHONE_NUMBER")
 );
 
 -- ======================
--- USER_ROLE
+--USER_ROLE
 -- ======================
 CREATE TABLE "USER_ROLE" (
     "ID" UUID PRIMARY KEY,
@@ -82,7 +76,7 @@ CREATE TABLE "USER_ROLE" (
 );
 
 -- ======================
--- TOKEN
+--TOKEN
 -- ======================
 CREATE TABLE "TOKEN" (
     "ID" UUID PRIMARY KEY,

@@ -1,10 +1,11 @@
-﻿using Libba.HubTo.Arcavis.Application.Features.User.GetUserById;
-using Libba.HubTo.Arcavis.Application.Features.User.GetAllUsers;
-using Libba.HubTo.Arcavis.Application.Features.User.CreateUser;
+﻿using Libba.HubTo.Arcavis.Application.Features.User.CreateUser;
 using Libba.HubTo.Arcavis.Application.Features.User.DeleteUser;
+using Libba.HubTo.Arcavis.Application.Features.User.GetAllUsers;
+using Libba.HubTo.Arcavis.Application.Features.User.GetUserById;
 using Libba.HubTo.Arcavis.Application.Features.User.UpdateUser;
 using Libba.HubTo.Arcavis.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace Libba.HubTo.Arcavis.WebApi.Controllers;
 
@@ -48,7 +49,8 @@ public class UserController : ControllerBase
     public async Task<IActionResult> Create([FromBody] CreateUserCommand command, CancellationToken cancellationToken)
     {
         var id = await _arcavisCQRS.SendAsync(command, cancellationToken);
-        return CreatedAtAction(nameof(GetById), new { id }, null);
+
+        return Ok(id);
     }
 
     [HttpPut]

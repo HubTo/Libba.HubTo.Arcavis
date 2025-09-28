@@ -19,7 +19,6 @@ public static class Registration
                     maxRetryCount: 5,
                     maxRetryDelay: TimeSpan.FromSeconds(30),
                     errorCodesToAdd: null);
-
             }));
 
         services.AddScoped(typeof(IRepository<>), typeof(Repository<>));

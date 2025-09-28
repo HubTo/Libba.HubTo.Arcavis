@@ -5,17 +5,20 @@ using MediatR;
 
 namespace Libba.HubTo.Arcavis.Application.Behaviors;
 
-public class TransactionBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
-    where TRequest : ICommand<TResponse>
+public class TransactionBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : ICommand<TResponse>
 {
+    #region Dependencies
     private readonly IUnitOfWork _unitOfWork;
     private readonly ILogger<TransactionBehavior<TRequest, TResponse>> _logger;
 
-    public TransactionBehavior(IUnitOfWork unitOfWork, ILogger<TransactionBehavior<TRequest, TResponse>> logger)
+    public TransactionBehavior(
+        IUnitOfWork unitOfWork, 
+        ILogger<TransactionBehavior<TRequest, TResponse>> logger)
     {
         _unitOfWork = unitOfWork;
         _logger = logger;
     }
+    #endregion
 
     public async Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next, CancellationToken cancellationToken)
     {
@@ -23,30 +26,22 @@ public class TransactionBehavior<TRequest, TResponse> : IPipelineBehavior<TReque
 
         try
         {
-            if (_unitOfWork.HasActiveTransaction)
+            return await _unitOfWork.ExecuteInTransactionAsync(async () =>
             {
-                return await next();
-            }
+                _logger.LogInformation("--- Begin transaction for {RequestName}", requestName);
 
-            TResponse response = default!;
+                var response = await next();
 
-            await _unitOfWork.BeginTransactionAsync(cancellationToken);
-            _logger.LogInformation("--- Begin transaction for {RequestName}", requestName);
+                _logger.LogInformation("--- Commit transaction for {RequestName}", requestName);
 
-            response = await next();
-
-            await _unitOfWork.CommitTransactionAsync(cancellationToken);
-            _logger.LogInformation("--- Commit transaction for {RequestName}", requestName);
-
-            return response;
+                return response;
+            }, cancellationToken);
         }
         catch (Exception ex)
         {
             _logger.LogError(ex, "--- Rollback transaction executed for {RequestName}", requestName);
-
-            await _unitOfWork.RollbackTransactionAsync(cancellationToken);
-
             throw;
         }
+
     }
 }

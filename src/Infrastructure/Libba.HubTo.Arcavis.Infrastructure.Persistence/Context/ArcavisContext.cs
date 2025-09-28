@@ -9,7 +9,7 @@ public class ArcavisContext : DbContext
     private readonly IRequestContext _requestContext;
 
     public ArcavisContext(
-        DbContextOptions<ArcavisContext> options, 
+        DbContextOptions<ArcavisContext> options,
         IRequestContext requestContext) : base(options)
     {
         _requestContext = requestContext;
@@ -40,11 +40,12 @@ public class ArcavisContext : DbContext
             switch (entry.State)
             {
                 case EntityState.Added:
-                    entry.Entity.CreatedBy = _requestContext.UserId;
+                    entry.Entity.CreatedBy = _requestContext.UserId == Guid.Empty ? null : _requestContext.UserId;
                     entry.Entity.CreatedAt = DateTime.UtcNow;
                     break;
+
                 case EntityState.Modified:
-                    entry.Entity.UpdatedBy = _requestContext.UserId;
+                    entry.Entity.UpdatedBy = _requestContext.UserId == Guid.Empty ? null : _requestContext.UserId;
                     entry.Entity.UpdatedAt = DateTime.UtcNow;
                     break;
             }
