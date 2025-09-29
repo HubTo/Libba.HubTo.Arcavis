@@ -17,6 +17,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Common\Libba.HubTo.Arcavis.Common\Libba.HubTo.Arcavis.Common.csproj" />
     <ProjectReference Include="..\..\Core\Libba.HubTo.Arcavis.Application\Libba.HubTo.Arcavis.Application.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\Libba.HubTo.Arcavis.Infrastructure.Logging\Libba.HubTo.Arcavis.Infrastructure.Logging.csproj" />
     <ProjectReference Include="..\..\Infrastructure\Libba.HubTo.Arcavis.Infrastructure.Persistence\Libba.HubTo.Arcavis.Infrastructure.Persistence.csproj" />
     <ProjectReference Include="..\..\Infrastructure\Libba.HubTo.Arcavis.Infrastructure.Redis\Libba.HubTo.Arcavis.Infrastructure.Redis.csproj" />
   </ItemGroup>

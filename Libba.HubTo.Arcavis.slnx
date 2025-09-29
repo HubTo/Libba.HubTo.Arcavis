@@ -8,6 +8,7 @@
     <Project Path="src/Core/Libba.HubTo.Arcavis.Domain/Libba.HubTo.Arcavis.Domain.csproj" />
   </Folder>
   <Folder Name="/src/Infrastructure/">
+    <Project Path="src/Infrastructure/Libba.HubTo.Arcavis.Infrastructure.Logging/Libba.HubTo.Arcavis.Infrastructure.Logging.csproj" Id="24608c80-6937-42cb-9cd6-48562d8ae2b6" />
     <Project Path="src/Infrastructure/Libba.HubTo.Arcavis.Infrastructure.Persistence/Libba.HubTo.Arcavis.Infrastructure.Persistence.csproj" />
     <Project Path="src/Infrastructure/Libba.HubTo.Arcavis.Infrastructure.Redis/Libba.HubTo.Arcavis.Infrastructure.Redis.csproj" Id="cdd8d8c2-5aed-4e8d-a379-428d6f2cb332" />
   </Folder>
