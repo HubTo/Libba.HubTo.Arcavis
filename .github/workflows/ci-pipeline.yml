@@ -20,13 +20,13 @@ jobs:
           dotnet-version: "8.0.x"
 
       - name: Restore dependencies
-        run: dotnet restore Libba.HubTo.Arcavis.sln
+        run: dotnet restore Libba.HubTo.Arcavis.slnx
 
       - name: Build
-        run: dotnet build Libba.HubTo.Arcavis.sln --configuration Release --no-restore
+        run: dotnet build Libba.HubTo.Arcavis.slnx --configuration Release --no-restore
 
       - name: Run tests
-        run: dotnet test Libba.HubTo.Arcavis.sln --configuration Release --no-build --logger "trx;LogFileName=test_results.trx"
+        run: dotnet test Libba.HubTo.Arcavis.slnx --configuration Release --no-build --logger "trx;LogFileName=test_results.trx"
 
       - name: Upload test results
         uses: actions/upload-artifact@v4
