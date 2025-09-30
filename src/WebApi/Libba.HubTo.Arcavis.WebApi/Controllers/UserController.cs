@@ -39,7 +39,6 @@ public class UserController : ControllerBase
     public async Task<IActionResult> GetById(Guid Id, CancellationToken cancellationToken)
     {
         var query = new GetUserByIdQuery(Id);
-
         var users = await _arcavisCQRS.SendAsync(query, cancellationToken);
 
         return Ok(users);
@@ -50,7 +49,7 @@ public class UserController : ControllerBase
     {
         var id = await _arcavisCQRS.SendAsync(command, cancellationToken);
 
-        return CreatedAtAction(nameof(GetById), new { id }, null);
+        return Ok(id);
     }
 
     [HttpPut]
@@ -70,6 +69,6 @@ public class UserController : ControllerBase
         if (!success)
             return NotFound();
 
-        return NoContent();
+        return Ok(success);
     }
 }

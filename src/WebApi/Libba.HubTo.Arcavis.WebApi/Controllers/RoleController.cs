@@ -38,7 +38,6 @@ public class RoleController : ControllerBase
     public async Task<IActionResult> GetById(Guid Id, CancellationToken cancellationToken)
     {
         var query = new GetRoleByIdQuery(Id);
-
         var users = await _arcavisCQRS.SendAsync(query, cancellationToken);
 
         return Ok(users);
@@ -48,7 +47,8 @@ public class RoleController : ControllerBase
     public async Task<IActionResult> Create([FromBody] CreateRoleCommand command, CancellationToken cancellationToken)
     {
         var id = await _arcavisCQRS.SendAsync(command, cancellationToken);
-        return CreatedAtAction(nameof(GetById), new { id }, null);
+
+        return Ok(id);
     }
 
     [HttpPut]
@@ -68,6 +68,6 @@ public class RoleController : ControllerBase
         if (!success)
             return NotFound();
 
-        return NoContent();
+        return Ok(success);
     }
 }
