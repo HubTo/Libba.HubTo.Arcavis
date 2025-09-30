@@ -50,7 +50,7 @@ public class UserController : ControllerBase
     {
         var id = await _arcavisCQRS.SendAsync(command, cancellationToken);
 
-        return Ok(id);
+        return CreatedAtAction(nameof(GetById), new { id }, null);
     }
 
     [HttpPut]
