@@ -68,6 +68,6 @@ public class UserRoleController : ControllerBase
         if (!success)
             return NotFound();
 
-        return Ok(success);
+        return NoContent();
     }
 }
