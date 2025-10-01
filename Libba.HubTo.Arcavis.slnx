@@ -11,6 +11,7 @@
     <Project Path="src/Infrastructure/Libba.HubTo.Arcavis.Infrastructure.Logging/Libba.HubTo.Arcavis.Infrastructure.Logging.csproj" Id="24608c80-6937-42cb-9cd6-48562d8ae2b6" />
     <Project Path="src/Infrastructure/Libba.HubTo.Arcavis.Infrastructure.Persistence/Libba.HubTo.Arcavis.Infrastructure.Persistence.csproj" />
     <Project Path="src/Infrastructure/Libba.HubTo.Arcavis.Infrastructure.Redis/Libba.HubTo.Arcavis.Infrastructure.Redis.csproj" Id="cdd8d8c2-5aed-4e8d-a379-428d6f2cb332" />
+    <Project Path="src/Infrastructure/Libba.HubTo.Arcavis.Infrastructure.Security/Libba.HubTo.Arcavis.Infrastructure.Security.csproj" Id="2c5cf56e-813c-4ab4-b4b6-da2df5af379a" />
   </Folder>
   <Folder Name="/src/WebApi/">
     <Project Path="src/WebApi/Libba.HubTo.Arcavis.WebApi/Libba.HubTo.Arcavis.WebApi.csproj" />

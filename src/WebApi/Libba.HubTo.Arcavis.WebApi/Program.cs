@@ -1,4 +1,5 @@
 using Libba.HubTo.Arcavis.Infrastructure.Persistence.Extensions;
+using Libba.HubTo.Arcavis.Infrastructure.Security.Extensions;
 using Libba.HubTo.Arcavis.Infrastructure.Logging.Extensions;
 using Libba.HubTo.Arcavis.Infrastructure.Redis.Extensions;
 using Libba.HubTo.Arcavis.Application.Extensions;
@@ -14,6 +15,7 @@ builder.Host.AddSerilogRegistration();
 builder.Services.AddEfCoreRegistration(builder.Configuration);
 builder.Services.AddApplicationRegistration();
 builder.Services.AddRedisRegistration(builder.Configuration);
+builder.Services.AddSecurityRegistration(builder.Configuration);
 
 
 builder.Services.AddControllers()

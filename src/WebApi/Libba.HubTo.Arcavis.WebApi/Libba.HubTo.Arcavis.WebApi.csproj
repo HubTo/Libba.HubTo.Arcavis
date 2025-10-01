@@ -20,6 +20,7 @@
     <ProjectReference Include="..\..\Infrastructure\Libba.HubTo.Arcavis.Infrastructure.Logging\Libba.HubTo.Arcavis.Infrastructure.Logging.csproj" />
     <ProjectReference Include="..\..\Infrastructure\Libba.HubTo.Arcavis.Infrastructure.Persistence\Libba.HubTo.Arcavis.Infrastructure.Persistence.csproj" />
     <ProjectReference Include="..\..\Infrastructure\Libba.HubTo.Arcavis.Infrastructure.Redis\Libba.HubTo.Arcavis.Infrastructure.Redis.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\Libba.HubTo.Arcavis.Infrastructure.Security\Libba.HubTo.Arcavis.Infrastructure.Security.csproj" />
   </ItemGroup>
 
 </Project>
